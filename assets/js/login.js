@@ -34,7 +34,44 @@ function DisplayResults(e) {
   }
   return false;
 }
+gapi.load('auth2', function() {
+  gapi.auth2.init({
+    client_id: '60176433158-p6ggkfslnahh8tkccv7330n4bitk152o.apps.googleusercontent.com',
+  });
+});
 
+function onSignIn(googleUser) {
+  const profile = googleUser.getBasicProfile();
+  const name = profile.getName();
+  const email = profile.getEmail();
+
+  // Call the Netlify function to store user details
+  storeUserDetails(name, email);
+}
+
+function storeUserDetails(name, email) {
+  fetch('/.Netlify/functions/store-user-details', {
+    method: 'POST',
+    body: JSON.stringify({ name, email }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.message) {
+        console.log('User details stored successfully');
+        // Perform additional actions if needed
+      } else {
+        console.error('Error storing user details:', data.error);
+        // Handle error case
+      }
+    })
+    .catch((error) => {
+      console.error('Error storing user details:', error);
+      // Handle error case
+    });
+}
 function change(e) {
   var name = document.forms["regform"]["name"].value;
   var error = document.getElementById("errormessage");
