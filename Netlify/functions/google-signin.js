@@ -1,8 +1,8 @@
 // netlify-functions/google-signin/google-signin.js
 
-const { OAuth2Client } = require('google-auth-library');
+import { OAuth2Client } from 'google-auth-library';
 
-exports.handler = async (event) => {
+export async function handler(event) {
   try {
     const { id_token } = JSON.parse(event.body);
 
@@ -30,4 +30,4 @@ exports.handler = async (event) => {
       body: JSON.stringify({ error: 'An error occurred' }),
     };
   }
-};
+}

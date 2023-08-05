@@ -129,7 +129,7 @@
     window.onload = function () {
       const clientId = 'Y60176433158-p6ggkfslnahh8tkccv7330n4bitk152o.apps.googleusercontent.com'; // Replace with your actual client ID
       gapi.load('auth2', function() {
-        gapi.auth2.init({
+        gapi.auth2.getAuthInstance({
           client_id: clientId,
         });
       });
