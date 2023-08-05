@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch: Johnny English Strikes Again (2018)</title>
+    <!-- Local Links -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../swiperjs/swiper-scrollbar-min.css" />
+    <link rel="stylesheet" href="../boxicons-2.1.4/css/boxicons.min.css" />
+    <link rel="stylesheet" href="../swiperjs/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="../fontawesome-free-6.4.0-web/css/fontawesome.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="../img/fav-icon.png" type="image/x-icon" />
+
+    <!-- ====================font-awesome cdnjs link================= -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .swiper {
+        width: 240px;
+        height: 320px;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Nav  -->
+      <div class="nav container">
+        <!-- logo -->
+        <a href="../../home.html" class="logo"> Film<span>Flix</span> </a>
+        <!-- Search Box -->
+        <div class="search-box">
+          <input type="search" id="search-input" placeholder="Search movie" />
+          <i class="bx bx-search"></i>
+        </div>
+        <!-- User -->
+        <a href="#" class="user">
+          <img src="../img/user.png" class="user-img" onclick="toggleMenu()" />
+        </a>
+        <!-- Nav Bar -->
+        <div class="navbar">
+          <a href="../../home.html" class="nav-link nav-active">
+            <i class="bx bx-home"></i>
+            <span class="nav-link-title">Home</span>
+          </a>
+          <a href="../../home.html" class="nav-link">
+            <i class="bx bxs-hot"></i>
+            <span class="nav-link-title">Trending</span>
+          </a>
+          <a href="../../home.html" class="nav-link">
+            <i class="bx bx-compass"></i>
+            <span class="nav-link-title">Explore</span>
+          </a>
+          <a href="../../home.html" class="nav-link">
+            <i class="bx bx-tv"></i>
+            <span class="nav-link-title">Movies</span>
+          </a>
+          <a href="../../home.html" class="nav-link">
+            <i class="bx bx-heart"></i>
+            <span class="nav-link-title">Favourite</span>
+          </a>
+        </div>
+        
+     <!-- Submenu for User Settings -->
+     <div class="sub-menu-wrap" id="subMenu" >
+       <div class="sub-menu">
+         <div class="user-info">
+           <img src="../img/user.png" alt="user">
+           <h3>John Doe</h3>
+         </div>
+         <hr>
+         
+         <!-- Submenu Links -->
+         <a href="#" class="sub-menu-link">
+           <img src="../img/profile.png" alt="profile">
+           <p>Edit Profile</p>
+           <span>&gt;</span>
+         </a>
+
+         <a href="#" class="sub-menu-link">
+           <img src="../img/setting.png" alt="setting">
+           <p>Settings & Privacy</p>
+           <span>&gt;</span>
+         </a>
+
+         <a href="#" class="sub-menu-link">
+           <img src="../img/help.png" alt="help">
+           <p>Help & Support</p>
+           <span>&gt;</span>
+         </a>
+
+         <a href="../../login.html" class="sub-menu-link">
+           <img src="../img/logout.png" alt="logout">
+           <p>Logout</p>
+           <span>&gt;</span>
+         </a>
+       </div>
+     </div>
+      </div>
+       
+    </header>
+    <!-- Play Movie Container -->
+    <div class="play-container container">
+      <!-- Play IMG -->
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/64639805a247a84851f6dbb1/1b48df98-7580-4e1d-a690-c5a25b1fd0c4/Johnny-English-3.jpg?format=1000w "
+        alt="Johnny English Strikes Again"
+        class="play-img"
+      />
+      <!-- pLAY Text -->
+      <div class="play-text">
+        <h2>Johnny English Strikes Again</h2>
+        <!-- rating -->
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+        </div>
+        <!-- Tags -->
+        <div class="tags">
+          <span>Action</span>
+          <span>Adventure</span>
+          <span>Comedy</span>
+        </div>
+      </div>
+      <!-- Play btn -->
+      <i class="bx bx-right-arrow play-movie"></i>
+      <!-- Video Container -->
+      <div class="video-container">
+        <!-- Video-Box  -->
+        <div class="video-box">
+          <iframe
+            src="https://streamtape.com/e/bGx22YyXJxCPzdx/"
+            width="100%"
+            allowfullscreen
+            allowtransparency
+            allow="autoplay"
+            scrolling="no"
+            frameborder="0"
+            id="myvideo"
+          ></iframe>
+          <!-- Close Video Icon  -->
+          <i class="bx bx-x close-video"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- About  -->
+    <div class="about-movie container">
+      <h2>Johnny English Strikes Again</h2>
+      <p>
+        After a cyber-attack reveals the identities of all active undercover
+        agents in Britain, Johnny English, a retired but clueless spy, is called
+        back into action. Tasked with finding the hacker and saving the day,
+        English embarks on a hilarious and action-packed mission. With his
+        unique and unorthodox spy skills, he stumbles into numerous
+        misadventures, providing plenty of laughs and excitement along the way.
+        As the fate of the country hangs in the balance, Johnny English proves
+        that he may be unconventional, but he's still the right man for the job.
+      </p>
+      <!-- Movie Cast  -->
+      <h2 class="cast-heading">Top Cast</h2>
+      <div class="cast">
+        <div class="cast-box">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Rowan_Atkinson_2011_2_cropped.jpg/800px-Rowan_Atkinson_2011_2_cropped.jpg "
+            alt="Rowan Atkinson"
+            class="cast-img"
+          />
+          <span class="cast-title">Rowan Atkinson</span>
+        </div>
+        <div class="cast-box">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Festival_de_Cinema_de_Sitges_2019_%2849500414408%29_%28cropped%29.jpg/220px-Festival_de_Cinema_de_Sitges_2019_%2849500414408%29_%28cropped%29.jpg "
+            alt="Olga Kurylenko"
+            class="cast-img"
+          />
+          <span class="cast-title">Olga Kurylenko</span>
+        </div>
+        <div class="cast-box">
+          <img
+            src=" https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Emma_Thompson_2022.jpg/220px-Emma_Thompson_2022.jpg"
+            alt="Emma Thompson"
+            class="cast-img"
+          />
+          <span class="cast-title">Emma Thompson</span>
+        </div>
+        <div class="cast-box">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Jake_Lacy_at_TCA_2010.jpg/220px-Jake_Lacy_at_TCA_2010.jpg "
+            alt="Jake Lacy"
+            class="cast-img"
+          />
+          <span class="cast-title">Jake Lacy</span>
+        </div>
+        <div class="cast-box">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ben_Miller_20191205.jpg/800px-Ben_Miller_20191205.jpg "
+            alt="Ben Miller"
+            class="cast-img"
+          />
+          <span class="cast-title">Ben Miller</span>
+        </div>
+        <div class="cast-box">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Kevin_Eldon_2013.jpg "
+            alt="Kevin Edon"
+            class="cast-img"
+          />
+          <span class="cast-title">Kevin Edon</span>
+        </div>
+      </div>
+    </div>
+
+   <!-- Recommended Movies -->
+   <h2 class="download-title">You Might Also Like...</h2>
+   <div class="swiper mySwiper">
+     <div class="swiper-wrapper">
+       <div class="swiper-slide">
+         <img src="../img/movie-1.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/jumanji.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+       <div class="swiper-slide">
+         <img src="../img/movie-2.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/hitman.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+       <div class="swiper-slide">
+         <img src="../img/movie-3.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/Shang-chi.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+       <div class="swiper-slide">
+         <img src="../img/movie-4.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/Eternals.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+       <div class="swiper-slide">
+         <img src="../img/crush-christmas.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/a-royal-christmas-crush.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+       <div class="swiper-slide">
+         <img src="../img/movie-5.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/Spectre.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+       <div class="swiper-slide">
+         <img src="../img/movie-7.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/Wolverine.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+       <div class="swiper-slide">
+         <img src="../img/movie-8.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/johnny-english.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+       <div class="swiper-slide">
+         <img src="../img/A_Quiet_Place.jpg" alt="" />
+         <div class="box-text">
+           <a
+             href="../movieplay/quite-place.html"
+             class="watch-btn play-btn"
+           >
+             <i class="bx bx-right-arrow"></i>
+           </a>
+         </div>
+       </div>
+     </div>
+   </div>
+    <!-- Download -->
+    <div class="download">
+      <h2 class="download-title">Download Movie</h2>
+      <div class="download-links">
+        <a
+          href="https://streamtape.com/v/bGx22YyXJxCPzdx/Johnny_English_Strikes_Again_%282018%29_BluRay_720p_%28fzmovies.net%29_c45410c7403ad633175a42acce9ca8f5.mkv#"
+          target="_blank"
+          download
+          >480p</a
+        >
+        <a
+          href="https://streamtape.com/v/bGx22YyXJxCPzdx/Johnny_English_Strikes_Again_%282018%29_BluRay_720p_%28fzmovies.net%29_c45410c7403ad633175a42acce9ca8f5.mkv#"
+          target="_blank"
+          download
+          >720p</a
+        >
+        <a
+          href="https://streamtape.com/v/bGx22YyXJxCPzdx/Johnny_English_Strikes_Again_%282018%29_BluRay_720p_%28fzmovies.net%29_c45410c7403ad633175a42acce9ca8f5.mkv#"
+          target="_blank"
+          download
+          >1080p</a
+        >
+      </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------- -->
+    <!-- Adding Disqus -->
+
+    <!-- Place the Disqus thread div at the bottom of the page -->
+    <div id="disqus_thread"></div>
+
+    <noscript
+      >Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+      ></noscript
+    >
+
+    <!-- Include the Disqus script at the bottom of the page -->
+    <script>
+      // Function to get the current page URL
+      function getCurrentPageURL() {
+        return window.location.href;
+      }
+
+      // Function to generate a unique identifier for the page
+      function generatePageIdentifier() {
+        // You can use any method to generate a unique identifier here.
+        // For example, you can use the current timestamp as the identifier.
+        return "page-" + Date.now();
+      }
+
+      var disqus_config = function () {
+        this.page.url = getCurrentPageURL(); // Get the current page URL dynamically
+        this.page.identifier = generatePageIdentifier(); // Generate a unique identifier dynamically
+      };
+
+      // Include the Disqus script dynamically (DO NOT include it again)
+      (function () {
+        var d = document,
+          s = d.createElement("script");
+        s.src = "https://fan2one.disqus.com/embed.js"; // Replace fan2one with your Disqus shortname
+        s.setAttribute("data-timestamp", +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+
+    <!-- Copyright  -->
+    <div class="copyright">&#169; Godak All rights Reserved</div>
+    <button id="scrollToTopButton" title="Go to top">
+      <i class="fa fa-angles-up" style="font-weight: bolder"></i>
+    </button>
+    <!-- Link Swiper  Js -->
+    <script src="../swiperjs/swiper-bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>

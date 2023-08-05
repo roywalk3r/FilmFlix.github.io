@@ -1,0 +1,128 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Profile</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        margin-top: 20px;
+      }
+      .profile-card {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 20px;
+      }
+      .profile-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .profile-email {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #888;
+      }
+      .profile-gender {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #888;
+      }
+      .logout-button {
+        background-color: #f44336;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      .logout-button:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Your Profile</h1>
+
+    <div class="profile-card">
+      <!-- Display the user's profile image -->
+      <img src="" alt="Profile Image" class="profile-image" />
+      <!-- Display the user's name -->
+      <h2 class="profile-name"></h2>
+      <!-- Display the user's email -->
+      <p class="profile-email"></p>
+      <!-- Display the user's gender -->
+      <p class="profile-gender"></p>
+
+      <!-- Logout Button -->
+      <button class="logout-button" onclick="signOut()">Logout</button>
+    </div>
+
+    <script>
+      // Function to display user's name and profile image
+      function displayProfileDetails() {
+        const userName = sessionStorage.getItem("userName");
+        const userEmail = sessionStorage.getItem("userEmail");
+        const userGender = sessionStorage.getItem("userGender");
+        const userImage = sessionStorage.getItem("userImage");
+
+        // Update the elements with user's name, email, gender, and profile image
+        document.querySelector(".profile-name").textContent =
+          "Hello, " + userName;
+        document.querySelector(".profile-email").textContent =
+          "Email: " + userEmail;
+        document.querySelector(".profile-gender").textContent =
+          "Gender: " + userGender;
+        document.querySelector(".profile-image").setAttribute("src", userImage);
+      }
+
+      // Function to handle sign out
+      function signOut() {
+        // Clear the session storage
+        sessionStorage.removeItem("userName");
+        sessionStorage.removeItem("userEmail");
+        sessionStorage.removeItem("userGender");
+        sessionStorage.removeItem("userImage");
+
+        // Redirect to index.html
+        window.location.href = "login.html";
+      }
+
+     
+// Check if the user is logged in and display profile details
+window.addEventListener('DOMContentLoaded', () => {
+  const userName = localStorage.getItem('userName');
+  if (userName) {
+    // User is logged in, display profile details
+    displayProfileDetails();
+  } else {
+    // User is not logged in, redirect to the login page
+    window.location.href = 'login.html';
+  }
+});
+    </script>
+
+    
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>

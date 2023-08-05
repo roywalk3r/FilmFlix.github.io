@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch:</title>
+    <!-- Local Links -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../swiperjs/swiper-scrollbar-min.css" />
+    <link rel="stylesheet" href="../boxicons-2.1.4/css/boxicons.min.css" />
+    <link rel="stylesheet" href="../swiperjs/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="../fontawesome-free-6.4.0-web/css/fontawesome.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="shortcut icon" href="../img/fav-icon.png" type="image/x-icon" />
+
+    <!-- ====================font-awesome cdnjs link================= -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .swiper {
+        width: 240px;
+        height: 320px;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Nav  -->
+      <div class="nav container">
+        <!-- logo -->
+        <a href="../../home.html" class="logo"> Film<span>Flix</span> </a>
+        <!-- Search Box -->
+        <div class="search-box">
+          <input type="search" id="search-input" placeholder="Search movie" />
+          <i class="bx bx-search"></i>
+        </div>
+        <!-- User -->
+        <a href="#" class="user">
+          <img src="../img/user.png" class="user-img" onclick="toggleMenu()" />
+        </a>
+        <!-- Nav Bar -->
+        <div class="navbar">
+          <a href="../../home.html" class="nav-link nav-active">
+            <i class="bx bx-home"></i>
+            <span class="nav-link-title">Home</span>
+          </a>
+          <a href="../../home.html" class="nav-link">
+            <i class="bx bxs-hot"></i>
+            <span class="nav-link-title">Trending</span>
+          </a>
+          <a href="../../home.html" class="nav-link">
+            <i class="bx bx-compass"></i>
+            <span class="nav-link-title">Explore</span>
+          </a>
+          <a href="../../home.html" class="nav-link">
+            <i class="bx bx-tv"></i>
+            <span class="nav-link-title">Movies</span>
+          </a>
+          <a href="../../home.html" class="nav-link">
+            <i class="bx bx-heart"></i>
+            <span class="nav-link-title">Favourite</span>
+          </a>
+        </div>
+        
+     <!-- Submenu for User Settings -->
+     <div class="sub-menu-wrap" id="subMenu" >
+       <div class="sub-menu">
+         <div class="user-info">
+           <img src="../img/user.png" alt="user">
+           <h3>John Doe</h3>
+         </div>
+         <hr>
+         
+         <!-- Submenu Links -->
+         <a href="#" class="sub-menu-link">
+           <img src="../img/profile.png" alt="profile">
+           <p>Edit Profile</p>
+           <span>&gt;</span>
+         </a>
+
+         <a href="#" class="sub-menu-link">
+           <img src="../img/setting.png" alt="setting">
+           <p>Settings & Privacy</p>
+           <span>&gt;</span>
+         </a>
+
+         <a href="#" class="sub-menu-link">
+           <img src="../img/help.png" alt="help">
+           <p>Help & Support</p>
+           <span>&gt;</span>
+         </a>
+
+         <a href="../../login.html" class="sub-menu-link">
+           <img src="../img/logout.png" alt="logout">
+           <p>Logout</p>
+           <span>&gt;</span>
+         </a>
+       </div>
+     </div>
+      </div>
+       
+    </header>
+    <!-- Play Movie Container -->
+    <div class="play-container container">
+      <!-- Play IMG -->
+      <img
+        src=" https://wallpapers.com/images/hd/child-s-play-3-movie-poster-h0m66kowpr44bsvi.jpg"
+        alt="movie poster"
+        class="play-img"
+      />
+      <!-- pLAY Text -->
+      <div class="play-text">
+        <h2>Childs Play 3</h2>
+        <!-- rating -->
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+        </div>
+        <!-- Tags -->
+        <div class="tags">
+          <span>Action</span>
+          <span>Horror</span>
+          <span>4K</span>
+        </div>
+      </div>
+      <!-- Play btn -->
+      <i class="bx bx-right-arrow play-movie"></i>
+      <!-- Video Container -->
+      <div class="video-container">
+        <!-- Video-Box  -->
+        <div class="video-box">
+          <iframe
+            src="https://streamtape.com/e/yAbwBKaDaXc1RZr/"
+            width="100%"
+            allowfullscreen
+            allowtransparency
+            allow="autoplay"
+            scrolling="no"
+            frameborder="0"
+            id="myvideo"
+          ></iframe>
+          <!-- Close Video Icon  -->
+          <i class="bx bx-x close-video"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- About  -->
+    <div class="about-movie container">
+      <h2></h2>
+      <p></p>
+      <!-- Movie Cast  -->
+      <h2 class="cast-heading">Top Cast</h2>
+      <div class="cast">
+        <div class="cast-box">
+          <a
+            href="https://www.themoviedb.org/person/68494-justin-whalin"
+            target="_blank"
+            title="read about actor on MovieDB"
+          >
+            <img
+              src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/oEKsEJsmAj1ozJ2ehZ60NeJvfW0.jpg "
+              alt="Justin Whalin"
+              class="cast-img"
+            />
+          </a>
+          <span class="cast-title">Justin Whalin</span>
+        </div>
+        <div class="cast-box">
+          <a
+            href="https://www.themoviedb.org/person/68495-perrey-reeves"
+            target="_blank"
+            title="read about actor on MovieDB"
+          >
+            <img
+              src=" https://www.themoviedb.org/t/p/w300_and_h450_bestv2/xgsCxH6GbrAj4JGrVk89hH7aOdW.jpg"
+              alt="Perrey Reeves"
+              class="cast-img"
+            />
+          </a>
+          <span class="cast-title">Perrey Reeves</span>
+        </div>
+        <div class="cast-box">
+          <a
+            href="https://www.themoviedb.org/person/68496-jeremy-sylvers"
+            target="_blank"
+            title="read about actor on MovieDB"
+          >
+            <img
+              src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/dnHX6Dcm7SzzDj5R4W8JIQWE00c.jpg"
+              alt="Jeremy Sylvers"
+              class="cast-img"
+            />
+          </a>
+          <span class="cast-title">Jeremy Sylvers</span>
+        </div>
+        <div class="cast-box">
+          <a
+            href="https://www.themoviedb.org/person/32802-travis-fine"
+            target="_blank"
+            title="read about actor on MovieDB"
+          >
+            <img
+              src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/4gjRxvndiZllcCsdpNQr5I0mfY2.jpg "
+              alt="Travis Fine"
+              class="cast-img"
+            />
+          </a>
+          <span class="cast-title">Travis Fine</span>
+        </div>
+        <div class="cast-box">
+          <a
+            href="https://www.themoviedb.org/person/68497-dean-jacobson"
+            target="_blank"
+            title="read about actor on MovieDB"
+          >
+            <img
+              src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/wkgTixkDkyRrNbBFkXfciBDNKYQ.jpg "
+              alt="Dean Jacobson"
+              class="cast-img"
+            />
+          </a>
+          <span class="cast-title">Dean Jacobson</span>
+        </div>
+        <div class="cast-box">
+          <a
+            href="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/z2LYR7Ickql7g5hnWJSIAWMPD4o.jpg"
+            target="_blank"
+            title="read about actor on MovieDB"
+          >
+            <img
+              src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/z2LYR7Ickql7g5hnWJSIAWMPD4o.jpg "
+              alt="Brad Dourif"
+              class="cast-img"
+            />
+          </a>
+          <span class="cast-title">Brad Dourif</span>
+        </div>
+      </div>
+    </div>
+    <!-- Recommended Movies -->
+    <h2 class="download-title">You Might Also Like...</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../img/movie-1.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/jumanji.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/movie-2.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/hitman.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/movie-3.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/Shang-chi.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/movie-4.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/Eternals.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/crush-christmas.jpg" alt="" />
+          <div class="box-text">
+            <a
+              href="../movieplay/a-royal-christmas-crush.html"
+              class="watch-btn play-btn"
+            >
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/movie-5.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/Spectre.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/movie-7.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/Wolverine.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/movie-8.jpg" alt="" />
+          <div class="box-text">
+            <a
+              href="../movieplay/johnny-english.html"
+              class="watch-btn play-btn"
+            >
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/A_Quiet_Place.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/quite-place.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Download -->
+    <div class="download">
+      <h2 class="download-title">Download Movie</h2>
+      <div class="download-links">
+        <a
+          href="https://streamtape.com/v/yAbwBKaDaXc1RZr/Childs_Play_3_-_Look_Whos_Stalking_%281991%29_BluRay_v2_720p_%28fzmovies.net%29_2b9dafb363713a5ffac2b4414f66922c.mkv.mp4#"
+          target="_blank"
+          download
+          >480p</a
+        >
+        <a
+          href="https://streamtape.com/v/yAbwBKaDaXc1RZr/Childs_Play_3_-_Look_Whos_Stalking_%281991%29_BluRay_v2_720p_%28fzmovies.net%29_2b9dafb363713a5ffac2b4414f66922c.mkv.mp4#"
+          target="_blank"
+          download
+          >720p</a
+        >
+        <a
+          href="https://streamtape.com/v/yAbwBKaDaXc1RZr/Childs_Play_3_-_Look_Whos_Stalking_%281991%29_BluRay_v2_720p_%28fzmovies.net%29_2b9dafb363713a5ffac2b4414f66922c.mkv.mp4#"
+          target="_blank"
+          download
+          >1080p</a
+        >
+      </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------- -->
+    <!-- Adding Disqus -->
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url =
+          "https://film-flix.000webhostapp.com/assets/movieplay/Childsplay3.html"; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "unique-article-id-12347"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+
+      (function () {
+        // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement("script");
+        s.src = "https://fan2one.disqus.com/embed.js";
+        s.setAttribute("data-timestamp", +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <!-- Copyright  -->
+    <div class="copyright">&#169; Godak All rights Reserved</div>
+    <button id="scrollToTopButton" title="Go to top">
+      <i class="fa fa-angles-up" style="font-weight: bolder"></i>
+    </button>
+
+    <noscript
+      >Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+      ></noscript
+    >
+    <!-- Link Swiper  Js -->
+    <script src="../swiperjs/swiper-bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+        loop: true,
+      });
+    </script>
+    <script
+      id="dsq-count-scr"
+      src="//fan2one.disqus.com/count.js"
+      async
+    ></script>
+  </body>
+</html>
