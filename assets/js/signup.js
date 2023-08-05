@@ -81,7 +81,7 @@ function FinalResults(e) {
 }
 
 function requestVerificationCode(name, email) {
-  fetch('/.netlify/functions/send-verification-mail', { // Change to match your folder structure
+  fetch('/.Netlify/functions/send-verification-mail', { // Change to match your folder structure
     method: 'POST',
     body: JSON.stringify({ name, email }),
     headers: {
