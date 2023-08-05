@@ -1,5 +1,5 @@
 async function sendEmail(to, subject, text) {
-    const response = await fetch('/.netlify/functions/send-email', {
+    const response = await fetch('/.Netlify/functions/send-email', {
       method: 'POST',
       body: JSON.stringify({ to, subject, text }),
       headers: {
