@@ -105,7 +105,7 @@ function requestVerificationCode(name, email) {
 }
 
 function verifyCode(userCode) {
-  fetch('/.netlify/functions/verify-code', { // Change to match your folder structure
+  fetch('/.Netlify/functions/verify-code', { // Change to match your folder structure
     method: 'POST',
     body: JSON.stringify({ userCode }),
     headers: {
