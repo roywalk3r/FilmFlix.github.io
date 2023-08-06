@@ -1,4 +1,9 @@
-  #scrollToTopButton{
+*{box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+}
+#scrollToTopButton{
     position: fixed;
     bottom: 40px;
     right: 25px;
@@ -16,7 +21,7 @@
     box-shadow: 0 6px 10px 0px gray;
 }
 
-#scrollToTopButton:hover , i:hover{
+#scrollToTopButton:hover ,#scrollToTopButton i:hover{
 background-color:white;
 color:red;
 }
@@ -73,7 +78,7 @@ color:red;
       body {
         margin: 0;
         padding: 0;
-        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85) ),url("./assets/img/background3.png") no-repeat center center fixed;
+        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85) ),url("../img/background3.png") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -100,7 +105,7 @@ color:red;
         color: white;
         font-family: sans-serif;
       }
-      p i {
+      p svg {
         width: 2em;
         height: 2em;
         margin-right: 0.5em;
