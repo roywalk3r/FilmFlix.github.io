@@ -27,7 +27,37 @@
       href="assets/img/fav-icon.png"
       type="image/x-icon"
     />
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const userImage = document.getElementById('userImage');
+          const userName = document.getElementById('userName');
+          const logoutLink = document.getElementById('logoutLink');
+  
+          // Listen for user authentication events
+          netlifyIdentity.on('init', user => {
+              if (!user) {
+                  // User is not authenticated
+                  userImage.style.display = 'none';
+                  userName.textContent = '';
+                  logoutLink.style.display = 'none';
+              } else {
+                  // User is authenticated
+                  userImage.style.display = 'block';
+                  userName.textContent = user.user_metadata.full_name || 'User';
+                  logoutLink.style.display = 'block';
+              }
+          });
+  
+          // Handle logout button click
+          logoutLink.addEventListener('click', function () {
+              netlifyIdentity.logout();
+          });
+  
+          // Initialize the Netlify Identity widget
+          netlifyIdentity.init();
+      });
+  </script>
+  
     <!-- ====================font-awesome cdnjs link================= -->
     <link
       rel="stylesheet"
@@ -79,9 +109,10 @@
 
         <a href="#" class="user">
           <img
-            src="assets/img/user.png"
+            src=""
             class="user-img"
             onclick="toggleMenu()"
+            id="userImage"
           />
         </a>
         <!-- Nav Bar -->
@@ -111,14 +142,14 @@
         <div class="sub-menu-wrap" id="subMenu">
           <div class="sub-menu">
             <div class="user-info">
-              <img src="assets/img/user.png" alt="user" />
-              <h3>John Doe</h3>
+              <img src="" alt="user" id="userImage" />
+              <h3 id="userName"></h3>
             </div>
             <hr />
 
             <!-- Submenu Links -->
             <a href="#" class="sub-menu-link">
-              <img src="assets/img/profile.png" alt="profile" />
+              <img src="" alt="profile" id="userImage" />
               <p>Edit Profile</p>
               <span>&gt;</span>
             </a>
@@ -136,7 +167,7 @@
             </a>
 
             <a href="login.html" class="sub-menu-link">
-              <img src="assets/img/logout.png" alt="logout" />
+              <img src="assets/img/logout.png" alt="logout" id="logoutLink" />
               <p>Logout</p>
               <span>&gt;</span>
             </a>
