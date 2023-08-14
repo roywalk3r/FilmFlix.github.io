@@ -15,6 +15,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -283,7 +285,12 @@
         location.replace("login.html");
       }
     </script>
-
+<script>
+  // Open the Netlify Identity Widget for login
+  document.getElementById('login').addEventListener('click', function () {
+      netlifyIdentity.open('login');
+  });
+</script>
     <script>
       function preloaderFadeOutInit() {
         $(".preloader").fadeOut("slow"); // will first fade out the loading animation

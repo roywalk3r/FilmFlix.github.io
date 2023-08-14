@@ -12,6 +12,8 @@
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/login.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </head>
 
 <body>
@@ -138,6 +140,31 @@
       });
     };
   </script>
+<script>
+  // Include the Netlify Identity Widget script
+  function loadNetlifyIdentityScript() {
+      var script = document.createElement('script');
+      script.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+      document.head.appendChild(script);
+  }
+  
+  // Function to handle login form submission and Netlify Identity
+  function handleLogin() {
+      // Authenticate using Netlify Identity Widget
+      netlifyIdentity.open('login');
+  }
+  
+  // Add event listener to the "Sign In" button
+  document.addEventListener('DOMContentLoaded', function () {
+      var signInButton = document.querySelector('.signin-button');
+      signInButton.addEventListener('click', handleLogin);
+      
+      // Load the Netlify Identity Widget script
+      loadNetlifyIdentityScript();
+  });
+</script>
+
+
   
   <script src="Netlify/functions/google-signin.js"></script>
   <script src="https://accounts.google.com/gsi/client" async></script>
