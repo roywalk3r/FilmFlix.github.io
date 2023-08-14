@@ -315,6 +315,8 @@
           } else {
               // User is authenticated
               console.log('User is authenticated');
+              // Redirect to the homepage
+              window.location.href = '/home.html'; // Replace with your actual homepage URL
           }
       });
       
@@ -322,6 +324,7 @@
       netlifyIdentity.init();
   });
 </script>
+
 
   
   </body>
