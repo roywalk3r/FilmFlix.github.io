@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Watch: Spectre (2021)</title>
+    <title>Watch: Spectre (2015)</title>
     <!-- Local Links -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../swiperjs/swiper-scrollbar-min.css" />
@@ -170,17 +170,43 @@
     </div>
     <!-- About  -->
     <div class="about-movie container">
-      <h2>Jungle Cruise</h2>
-      <p>
-        Spectre is a 2015 spy film and the fourth instalment in the James Bond
-        film series produced by Eon Productions, starring Daniel Craig in his
-        fourth portrayal of the fictional MI6 agent James Bond. It is the direct
-        sequel to 2012's Skyfall and was directed by Sam Mendes, who also
-        directed Skyfall. The screenplay was written by John Logan, Neal Purvis,
-        Robert Wade, and Jez Butterworth. In the film, Bond investigates the
-        activities of a criminal organisation called Spectre, led by his nemesis
-        Ernst Stavro Blofeld (Christoph Waltz).
-      </p>
+    
+      <div class="sypnosis">
+        <img src="../img/specter.jpg" alt="movie poster" class="img">
+        <div class="content">
+          <h2>Spectre</h2>
+          <div class="req">
+        <span><i class="bx bx-calendar-alt"></i> 2015</span>
+        <span class="age-req"><i>PG 13</i></span>
+        <span><i class="bx bx-time"></i> 2h 28min</span>
+        </div>
+        <p>
+          A cryptic message from Bond’s past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.
+        </p>
+        <span  id="release"><i class="fa fa-calendar"></i> Release date : 6<sup>th</sup> October 2015</span>
+        <span id="writer">Writer <span id="name">: John Philips</span></span>
+        <div class="rating-card">
+          <div class="rating-content">
+          <h2 class="card-heading">7.81/10</h2>
+          <span style="color: rgb(86, 39, 129);">4314 reviews</span>
+          </div>
+          <div class="stars">
+            <input type="radio" name="rating" id="star5">
+            <label for="star5"><i class="fa fa-star"></i></label>
+            <input type="radio" name="rating" id="star4">
+            <label for="star4"><i class="fa fa-star"></i></label>
+            <input type="radio" name="rating" id="star3">
+            <label for="star3"><i class="fa fa-star"></i></label>
+            <input type="radio" name="rating" id="star2">
+            <label for="star2"><i class="fa fa-star"></i></label>
+            <input type="radio" name="rating" id="star1">
+            <label for="star1"><i class="fa fa-star"></i></label>
+          </div>
+          <p class="thought">what do you think about the movie?</p>
+        </div>
+      
+        </div>
+      </div>
       <!-- Movie Cast  -->
       <h2 class="cast-heading">Top Cast</h2>
       <div class="cast">
@@ -359,35 +385,6 @@
 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-<!-- Include the Disqus script at the bottom of the page -->
-<script>
-  // Function to get the current page URL
-function getCurrentPageURL() {
-  var url = window.location.href;
-  return url.replace(/\.html$/, ''); // Remove .html extension from the URL
-}
-
-
-  // Function to generate a unique identifier for the page
-  function generatePageIdentifier() {
-    // You can use any method to generate a unique identifier here.
-    // For example, you can use the current timestamp as the identifier.
-    return 'page-' + Date.now();
-  }
-
-  var disqus_config = function () {
-    this.page.url = getCurrentPageURL(); // Get the current page URL dynamically
-    this.page.identifier = generatePageIdentifier(); // Generate a unique identifier dynamically
-  };
-
-  // Include the Disqus script dynamically (DO NOT include it again)
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://fan2one.disqus.com/embed.js'; // Replace fan2one with your Disqus shortname
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
     <!-- Copyright  -->
     <div class="copyright">&#169; Godak All rights Reserved</div>
     <button id="scrollToTopButton" title="Go to top">

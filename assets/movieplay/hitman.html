@@ -82,44 +82,43 @@
             <span class="nav-link-title">Favourite</span>
           </a>
         </div>
-        
-     <!-- Submenu for User Settings -->
-     <div class="sub-menu-wrap" id="subMenu" >
-       <div class="sub-menu">
-         <div class="user-info">
-           <img src="../img/user.png" alt="user">
-           <h3>John Doe</h3>
-         </div>
-         <hr>
-         
-         <!-- Submenu Links -->
-         <a href="#" class="sub-menu-link">
-           <img src="../img/profile.png" alt="profile">
-           <p>Edit Profile</p>
-           <span>&gt;</span>
-         </a>
 
-         <a href="#" class="sub-menu-link">
-           <img src="../img/setting.png" alt="setting">
-           <p>Settings & Privacy</p>
-           <span>&gt;</span>
-         </a>
+        <!-- Submenu for User Settings -->
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="../img/user.png" alt="user" />
+              <h3>John Doe</h3>
+            </div>
+            <hr />
 
-         <a href="#" class="sub-menu-link">
-           <img src="../img/help.png" alt="help">
-           <p>Help & Support</p>
-           <span>&gt;</span>
-         </a>
+            <!-- Submenu Links -->
+            <a href="#" class="sub-menu-link">
+              <img src="../img/profile.png" alt="profile" />
+              <p>Edit Profile</p>
+              <span>&gt;</span>
+            </a>
 
-         <a href="../../login.html" class="sub-menu-link">
-           <img src="../img/logout.png" alt="logout">
-           <p>Logout</p>
-           <span>&gt;</span>
-         </a>
-       </div>
-     </div>
+            <a href="#" class="sub-menu-link">
+              <img src="../img/setting.png" alt="setting" />
+              <p>Settings & Privacy</p>
+              <span>&gt;</span>
+            </a>
+
+            <a href="#" class="sub-menu-link">
+              <img src="../img/help.png" alt="help" />
+              <p>Help & Support</p>
+              <span>&gt;</span>
+            </a>
+
+            <a href="../../login.html" class="sub-menu-link">
+              <img src="../img/logout.png" alt="logout" />
+              <p>Logout</p>
+              <span>&gt;</span>
+            </a>
+          </div>
+        </div>
       </div>
-       
     </header>
     <!-- Play Movie Container -->
     <div class="play-container container">
@@ -171,14 +170,47 @@
     </div>
     <!-- About  -->
     <div class="about-movie container">
-      <h2>Hitman's Bodyguard</h2>
-      <p>
-        Michael Bryce lives a luxurious life as a successful UK-based private
-        bodyguard, until his client Takashi Kurosawa, an international arms
-        dealer, is assassinated on his watch. Two years later, the
-        fallen-from-grace Bryce survives by protecting drug-addicted corporate
-        executives in London.
-      </p>
+      <div class="sypnosis">
+        <img src="../img/HitmansBodyguard.jpg" alt="movie poster" class="img" />
+        <div class="content">
+          <h2>Hitman's Bodyguard</h2>
+          <div class="req">
+            <span><i class="bx bx-calendar-alt"></i> 2023</span>
+            <span class="age-req"><i>PG 13</i></span>
+            <span><i class="bx bx-time"></i> 1h 58min</span>
+          </div>
+          <p>
+            Michael Bryce lives a luxurious life as a successful UK-based
+            private bodyguard, until his client Takashi Kurosawa, an
+            international arms dealer, is assassinated on his watch. Two years
+            later, the fallen-from-grace Bryce survives by protecting
+            drug-addicted corporate executives in London.
+          </p>
+          <span id="release"
+            ><i class="fa fa-calendar"></i> Release date : 18<sup>th</sup> August 2023</span
+          >
+          <span id="writer">Writer <span id="name"> : Tom O'Connor</span></span>
+          <div class="rating-card">
+            <div class="rating-content">
+              <h2 class="card-heading">7.81/10</h2>
+              <span style="color: rgb(86, 39, 129)">4314 reviews</span>
+            </div>
+            <div class="stars">
+              <input type="radio" name="rating" id="star5" />
+              <label for="star5"><i class="fa fa-star"></i></label>
+              <input type="radio" name="rating" id="star4" />
+              <label for="star4"><i class="fa fa-star"></i></label>
+              <input type="radio" name="rating" id="star3" />
+              <label for="star3"><i class="fa fa-star"></i></label>
+              <input type="radio" name="rating" id="star2" />
+              <label for="star2"><i class="fa fa-star"></i></label>
+              <input type="radio" name="rating" id="star1" />
+              <label for="star1"><i class="fa fa-star"></i></label>
+            </div>
+            <p class="thought">what do you think about the movie?</p>
+          </div>
+        </div>
+      </div>
       <!-- Movie Cast  -->
       <h2 class="cast-heading">Top Cast</h2>
       <div class="cast">
@@ -209,111 +241,90 @@
       </div>
     </div>
 
-  <!-- Recommended Movies -->
-  <h2 class="download-title">You Might Also Like...</h2>
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="../img/movie-1.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/jumanji.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+    <!-- Recommended Movies -->
+    <h2 class="download-title">You Might Also Like...</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../img/movie-2.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/hitman2.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/movie-2.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/hitman.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+        <div class="swiper-slide">
+          <img src="../img/movie-1.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/jumanji.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/movie-3.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/Shang-chi.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+        <div class="swiper-slide">
+          <img src="../img/movie-3.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/Shang-chi.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/movie-4.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/Eternals.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+        <div class="swiper-slide">
+          <img src="../img/movie-4.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/Eternals.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/crush-christmas.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/a-royal-christmas-crush.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+        <div class="swiper-slide">
+          <img src="../img/crush-christmas.jpg" alt="" />
+          <div class="box-text">
+            <a
+              href="../movieplay/a-royal-christmas-crush.html"
+              class="watch-btn play-btn"
+            >
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/movie-5.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/Spectre.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+        <div class="swiper-slide">
+          <img src="../img/movie-5.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/Spectre.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/movie-7.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/Wolverine.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+        <div class="swiper-slide">
+          <img src="../img/movie-7.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/Wolverine.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/movie-8.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/johnny-english.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+        <div class="swiper-slide">
+          <img src="../img/movie-8.jpg" alt="" />
+          <div class="box-text">
+            <a
+              href="../movieplay/johnny-english.html"
+              class="watch-btn play-btn"
+            >
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/A_Quiet_Place.jpg" alt="" />
-        <div class="box-text">
-          <a
-            href="../movieplay/quite-place.html"
-            class="watch-btn play-btn"
-          >
-            <i class="bx bx-right-arrow"></i>
-          </a>
+        <div class="swiper-slide">
+          <img src="../img/A_Quiet_Place.jpg" alt="" />
+          <div class="box-text">
+            <a href="../movieplay/quite-place.html" class="watch-btn play-btn">
+              <i class="bx bx-right-arrow"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <!-- Download -->
     <div class="download">
       <h2 class="download-title">Download Movie</h2>
@@ -341,62 +352,46 @@ https://streamtape.com/v/9pWaoGA727CYeW/The_Hitmans_Bodyguard_2017_%282017%29_Bl
         >
       </div>
     </div>
-    
+
     <!-- ---------------------------------------------------------------------------- -->
-  <!-- Adding Disqus -->
- 
-<!-- Place the Disqus thread div at the bottom of the page -->
-<div id="disqus_thread"></div>
+    <!-- Adding Disqus -->
 
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <!-- Place the Disqus thread div at the bottom of the page -->
+    <div id="disqus_thread"></div>
 
-<!-- Include the Disqus script at the bottom of the page -->
-<script>
-  // Function to get the current page URL
-function getCurrentPageURL() {
-  var url = window.location.href;
-  return url.replace(/\.html$/, ''); // Remove .html extension from the URL
-}
+    <noscript
+      >Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+      ></noscript
+    >
 
-
-  // Function to generate a unique identifier for the page
-  function generatePageIdentifier() {
-    // You can use any method to generate a unique identifier here.
-    // For example, you can use the current timestamp as the identifier.
-    return 'page-' + Date.now();
-  }
-
-  var disqus_config = function () {
-    this.page.url = getCurrentPageURL(); // Get the current page URL dynamically
-    this.page.identifier = generatePageIdentifier(); // Generate a unique identifier dynamically
-  };
-
-  // Include the Disqus script dynamically (DO NOT include it again)
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://fan2one.disqus.com/embed.js'; // Replace fan2one with your Disqus shortname
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
-
-  <!-- Copyright  -->
-  <div class="copyright">&#169; Godak All rights Reserved</div>
-  <button id="scrollToTopButton" title="Go to top">
-      <i class="fa fa-angles-up"  style="font-weight: bolder;"></i>
+    <!-- Copyright  -->
+    <div class="copyright">&#169; Godak All rights Reserved</div>
+    <button id="scrollToTopButton" title="Go to top">
+      <i class="fa fa-angles-up" style="font-weight: bolder"></i>
     </button>
-  
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <!-- Link Swiper  Js -->
-  <script src="../swiperjs/swiper-bundle.min.js"></script>
-  <script src="../js/script.js"></script>
-  <script>
+
+    <noscript
+      >Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+      ></noscript
+    >
+    <!-- Link Swiper  Js -->
+    <script src="../swiperjs/swiper-bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
       var swiper = new Swiper(".mySwiper", {
         effect: "cards",
         grabCursor: true,
-        loop:true,
+        loop: true,
       });
     </script>
-    <script id="dsq-count-scr" src="//fan2one.disqus.com/count.js" async></script>
+    <script
+      id="dsq-count-scr"
+      src="//fan2one.disqus.com/count.js"
+      async
+    ></script>
   </body>
-  </html>
+</html>

@@ -6,11 +6,12 @@ function toggleMenu(){
 // swiper initialization code
 var swiper = new Swiper(".popular-content", {
   slidesPerView:1,
+  loop:true,
     spaceBetween: 10,
     grabCursor:true,
-    autopaly: {
-      delay:755500,
-      disableOnInteraction:false,
+    autoplay: {
+      delay:2500,
+      disableOnInteraction: true,
     },
     pagination: {
       el: ".swiper-pagination"
@@ -44,7 +45,7 @@ var swiper = new Swiper(".popular-content", {
     },
 });
 
-//Show Video
+// Show Video
 
 let playButton = document.querySelector(".play-movie");
 let video = document.querySelector(".video-container");
@@ -67,7 +68,7 @@ myvideo.pause();
 
 
 
-
+ 
 // GO to top button
 
   // Get the button element
@@ -91,8 +92,43 @@ myvideo.pause();
     };
     window.scrollTo(scrollOptions);
     requestAnimationFrame(scrollToTopButton);
-
+    
   });
 
+
+  // DISQUS COMMENT SECTION  SCRIPT
   // Add scroll event listener to show/hide the button
   window.addEventListener("scroll", toggleScrollButton);
+
+
+
+ 
+// Function to get the current page URL without the file extension
+function getCurrentPageURL() {
+  var url = window.location.href;
+  return url.replace(/\.html$/, ''); // Remove .html extension from the URL for sync incase of URL rewriting 
+}
+
+
+  // Function to generate a unique identifier for the page
+  function generatePageIdentifier() {
+    // You can use any method to generate a unique identifier here.
+    // Geting The Time Stamp OF the Current Page to use as an identifier
+    return 'page-' + Date.now();
+  }
+
+  var disqus_config = function () {
+    this.page.url = getCurrentPageURL(); // Get the current page URL of each page  dynamically
+    this.page.identifier = generatePageIdentifier(); // Generate a unique identifier dynamically for each page
+  };
+
+
+  // Include the Disqus script dynamically
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://fan2one.disqus.com/embed.js'; // Replace fan2one with your Disqus shortname
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+
+  //  DISQUS COMMENT SECTION SCRIPT END

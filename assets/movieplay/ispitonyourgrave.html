@@ -164,10 +164,43 @@
 
     <!-- About  -->
     <div class="about-movie container">
-      <h2>I Spit on Your Grave 2</h2>
-      <p>
-        Naturally beautiful, Katie has just settled into New York where she, like many other young women, is trying to make it as a model. But what starts out as an innocent and simple photo shoot soon turns into something disturbingly unthinkable! Raped, tortured and kidnapped to a foreign country, Jessica is buried alive and left to die. Against all odds, she manages to escape. Severely injured, she will have to tap into the darkest places of the human psyche to not only survive, but to exact her revenge…
-      </p>
+   
+      <div class="sypnosis">
+        <img src="../img/i-spit-grave-2.jpg" alt="movie poster" class="img">
+        <div class="content">
+          <h2>I Spit on Your Grave 2</h2>
+          <div class="req">
+        <span><i class="bx bx-calendar-alt"></i> 2013</span>
+        <span class="age-req"><i>PG 13</i></span>
+        <span><i class="bx bx-time"></i> 1h 46min</span>
+        </div>
+        <p>
+          Naturally beautiful, Katie has just settled into New York where she, like many other young women, is trying to make it as a model. But what starts out as an innocent and simple photo shoot soon turns into something disturbingly unthinkable! Raped, tortured and kidnapped to a foreign country, Jessica is buried alive and left to die. Against all odds, she manages to escape. Severely injured, she will have to tap into the darkest places of the human psyche to not only survive, but to exact her reveng.
+        </p>
+        <span  id="release"><i class="fa fa-calendar"></i> Release date : 20<sup>th</sup> September 2013</span>
+        <span id="writer">Writer <span id="name">: Niel Elman</span></span>
+        <div class="rating-card">
+          <div class="rating-content">
+          <h2 class="card-heading">7.81/10</h2>
+          <span style="color: rgb(86, 39, 129);">4314 reviews</span>
+          </div>
+          <div class="stars">
+            <input type="radio" name="rating" id="star5">
+            <label for="star5"><i class="fa fa-star"></i></label>
+            <input type="radio" name="rating" id="star4">
+            <label for="star4"><i class="fa fa-star"></i></label>
+            <input type="radio" name="rating" id="star3">
+            <label for="star3"><i class="fa fa-star"></i></label>
+            <input type="radio" name="rating" id="star2">
+            <label for="star2"><i class="fa fa-star"></i></label>
+            <input type="radio" name="rating" id="star1">
+            <label for="star1"><i class="fa fa-star"></i></label>
+          </div>
+          <p class="thought">what do you think about the movie?</p>
+        </div>
+      
+        </div>
+      </div>
       <!-- Movie Cast  -->
       <h2 class="cast-heading">Top Cast</h2>
       <div class="cast">
@@ -214,10 +247,10 @@
    <div class="swiper mySwiper">
      <div class="swiper-wrapper">
        <div class="swiper-slide">
-         <img src="../img/movie-1.jpg" alt="" />
+         <img src="../img/it-follows.jpg" alt="" />
          <div class="box-text">
            <a
-             href="../movieplay/jumanji.html"
+             href="../movieplay/It_Follows.html"
              class="watch-btn play-btn"
            >
              <i class="bx bx-right-arrow"></i>
@@ -225,10 +258,10 @@
          </div>
        </div>
        <div class="swiper-slide">
-         <img src="../img/movie-2.jpg" alt="" />
+         <img src="../img/halloween.jpg" alt="" />
          <div class="box-text">
            <a
-             href="../movieplay/hitman.html"
+             href="../movieplay/Halloween.html"
              class="watch-btn play-btn"
            >
              <i class="bx bx-right-arrow"></i>
@@ -333,35 +366,6 @@
 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-<!-- Include the Disqus script at the bottom of the page -->
-<script>
-  // Function to get the current page URL
-function getCurrentPageURL() {
-  var url = window.location.href;
-  return url.replace(/\.html$/, ''); // Remove .html extension from the URL
-}
-
-
-  // Function to generate a unique identifier for the page
-  function generatePageIdentifier() {
-    // You can use any method to generate a unique identifier here.
-    // For example, you can use the current timestamp as the identifier.
-    return 'page-' + Date.now();
-  }
-
-  var disqus_config = function () {
-    this.page.url = getCurrentPageURL(); // Get the current page URL dynamically
-    this.page.identifier = generatePageIdentifier(); // Generate a unique identifier dynamically
-  };
-
-  // Include the Disqus script dynamically (DO NOT include it again)
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://fan2one.disqus.com/embed.js'; // Replace fan2one with your Disqus shortname
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
 
     <!-- Copyright  -->
     <div class="copyright">&#169; Godak All rights Reserved</div>

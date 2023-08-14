@@ -35,13 +35,18 @@
   --jet: hsl(0, 0%, 20%);
   
   
-   --body-color: #1e1e2a;
-   --container-color:#2d2e37;
-   --text-color:#fcfeff;
+   --body-color:  hsl(200, 18%, 7%);
+   --container-color:#000000;
+   --text-color:#fff;
    --main-color: #ffb43a;
    --hover-color: hsl(37 94% 57%);
    
-
+   /* --body-color: #1e1e2a;
+   --container-color:#2d2e37;
+   --text-color:#fcfeff;
+   --main-color: #ffb43a;
+   --hover-color: hsl(37 94% 57%); */
+   
   /**
    * typography
    */
@@ -101,6 +106,7 @@ html
 
 h1,h2,h3,h4{
   color:var(--white);
+  font-family: var(--ff-poppins);
 }
 /* Custom Scroll Bar */
 html::-webkit-scrollbar{
@@ -135,11 +141,17 @@ html::-webkit-scrollbar-thumb{
   outline: none;
   padding: 6px;
   border-radius: 50%;
+  transition: background-color 0.5s ease;
   }
-  
-  #scrollToTopButton:hover ,#scrollToTopButton i:hover {
-  color: red;
-  background-color: white;
+  #scrollToTopButton i{
+    color: black;
+  }
+  #scrollToTopButton:hover {
+  background-color: #fff;
+  }
+
+  #scrollToTopButton:hover i {
+color: red;
   }
   /* Go to top button ended */
   
@@ -177,13 +189,20 @@ header{
 .logo{
   font-size: 1.4rem;
   color: var(--text-color);
-  font-weight: 500;
   text-transform: uppercase;
   margin: 0 auto 0 0;
+  font-family: var(--ff-poppins);
+  font-weight: 600;
 }
 
 .logo span{
-  color: var(--main-color);
+  color: red;
+  font-family: var(--ff-poppins);
+  font-weight: 600;
+}
+
+.bx{
+  color: #ccc;
 }
 
 /* Search */
@@ -246,13 +265,25 @@ header{
 }
 
 .nav-link:hover, .nav-active{
-  color: var(--text-color);
   transition: 0.3s all linear;
   transform: scale(1.1);
+}
+.nav-link .bx,.nav-link .nav-link-title{
+  color: #ffffff;
+}
+.nav-link:hover .bx,.nav-link:hover .nav-link-title{
+  transition: 0.5s ease;
+  color: rgb(248, 18, 248);
+  font-family: var(--ff-poppins);
 }
 .nav-link .bx{
   font-size:1.6rem;
 }
+
+.trending{
+  color:red;
+}
+
 .nav-link-title{
   font-size: 0.7rem;
 }
@@ -460,13 +491,13 @@ overflow: hidden;
   display: flex;
 
 }
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
 
   .swiper-slide, swiper-slide {
     width: 350px !important;
     padding: 20px !important;
   }
-}
+} */
 
 .swiper-button-next,
 .swiper-button-prev{
@@ -497,25 +528,7 @@ overflow: hidden;
   transition: 0.5s;
 }
 
-/* Next Page Btn */
-.next-page{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2.5rem;
-}
 
-.next-btn{
-  background:var(--main-color);
-  padding: 12px 20px ;
-  color: var(--text-color);
-  font-weight: 500;
-}
-
-.next-btn:hover{
-  background: var(--hover-color);
-  transition: 0.3s all linear;
-}
 
 /* copyright */
 .copyright{
@@ -577,11 +590,13 @@ overflow: hidden;
   align-items: center;
   column-gap: 8px;
   margin: 1rem 0;
+  
 }
 
 .tags span{
-  background: var(--container-color);
-  padding: 0 4px;
+  background:#2d2e37 ;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 .play-movie{
@@ -690,6 +705,138 @@ height: 180px;
 object-fit: cover;
 object-position: center;
 }
+/* Remodification of movie play page  */
+/* About mod */
+.about-movie .sypnosis{
+  display: flex;
+gap: 1.5rem;
+}
+.about-movie .sypnosis .content{
+  display: flex;
+  flex-direction: column; 
+     }
+.about-movie .sypnosis .img{
+  max-width: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 100%;
+}
+.content #writer{
+
+  font-size:1em!important;
+  font-weight: 500;
+  color: rgb(123, 59, 184);
+}
+.content #writer #name{
+margin-left: 4.8rem;
+color: inherit;
+}
+.content #release{
+  margin-top: 20px;
+  font-size:1em!important;
+  font-weight: 300;
+  color: rgb(123, 59, 184);
+}
+.content #release sup{
+  color: inherit;
+}
+@media (max-width:767px) {
+  .about-movie .sypnosis{
+  display: flex;
+gap: 1.5rem;
+flex-direction: column;
+}
+.rating-card{
+  margin-top: 10px;
+  margin-left: 0px !important;
+}
+}
+/* Rating for movie */
+.rating-card {
+background: url('../img/ratingbg.webp');
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: fit-content;
+margin-left: 55%;
+}
+
+.card-heading {
+margin-bottom: 10px;
+font-size: 24px;
+color: purple !important;
+}
+
+.rating-card .stars {
+border-radius: 20px;
+background: black;
+display: flex;
+justify-content: center;
+flex-direction: row-reverse;
+font-size: 20px;
+gap: 5px;
+padding: 5px;
+}
+
+input[type="radio"] {
+display: none;
+}
+
+
+input[type="radio"]:checked ~ label {
+color: #FFD700; /* Gold color for filled Font Awesome star */
+}
+.rating-card .stars label {
+display: inline-block;
+width: 25px;
+height: 25px;
+color: unset; /* Default color for Boxicons star */
+cursor: pointer;
+}
+.fa{
+color: unset !important;
+}
+.rating-content{
+display: flex;
+gap: 10px;
+}
+.rating-content span{
+margin-top: 10px;
+}
+
+.thought{
+margin-top: 10px;
+font-size: 0.7em !important;
+color:  rgb(86, 39, 129);
+}
+
+/* Requirement css */
+.content .req{
+padding: 10px 0px;
+}
+.content .req span {
+  padding: 0 10px;
+  background: #444444;
+  border-radius: 10px;
+  width:fit-content;
+}
+
+
+
+.content .req .age-req{
+  background: #de0611;
+
+}
+.content .req span i  {
+  color: #fff;
+  padding: 0 8px;
+  display: inline-block;
+  font-style: normal;
+  border-radius: 2px;
+}
+
+/* Remod End */
 /* Download */
 .download{
   max-width: 800px;
@@ -872,9 +1019,9 @@ font-size: 0.875rem;
     bottom: 10rem;
     right: 2rem;
   }
-  .video-container{
+  /* .video-container{
     
-  }
+  } */
 
 }
 
@@ -980,17 +1127,39 @@ font-size: 0.875rem;
 
 /* Disqus Modifications  */
 #disqus_thread{
-  padding: 0 5rem !important;
+  /* padding: 0 7rem !important; */
+  max-width: 1060px;
+  padding: 10px;
+  margin: auto;
 }
-.light-anchor .form-refresh .post-action__button.post-action__button {
-  color: #fff !important;
-}
-.post-action__button.post-action__button {
-  background-color:var(--disqus-comment-button,#d32eff) !important;
+
+ .post-action__button {
+  background-color:var(--disqus-comment-button) !important;
 }
 @media (max-width:767px) {
   #disqus_thread{
     padding: 0.5rem !important;
   }
+}
+
+@media (min-width:1440px) and (max-width:2560px) {
+  #disqus_thread{
+    padding: 0.5rem !important;
+    max-width: 1260px;
+  }
+  .container{
+    max-width: 1260px;
+  }
   
+}
+
+
+@media (min-width:2560px) {
+  .container{
+    max-width: 2260px;
+  }
+  #disqus_thread{
+    padding: 0.5rem !important;
+    max-width: 2260px;
+  }
 }

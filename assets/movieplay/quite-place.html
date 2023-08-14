@@ -164,12 +164,45 @@
 
     <!-- About  -->
     <div class="about-movie container">
-        <h2>A Quite Place</h2>
-        <p>
+    
+        <div class="sypnosis">
+          <img src="../img/quiteplace.jpg" alt="movie poster" class="img">
+          <div class="content">
+            <h2>A Quite Place</h2>
+            <div class="req">
+          <span><i class="bx bx-calendar-alt"></i> 2018</span>
+          <span class="age-req"><i>PG 13</i></span>
+          <span><i class="bx bx-time"></i> 1h 44min</span>
+          </div>
+          <p>
             A Quiet Place is a post-apocalyptic horror film where a family is forced to
             live in silence while hiding from monsters with ultra-sensitive hearing. They
             must now rely on each other to survive.
         </p>
+          <span  id="release"><i class="fa fa-calendar"></i> Release date : 3<sup>rd</sup> April 2018</span>
+          <span id="writer">Writer <span id="name">: John Philips</span></span>
+          <div class="rating-card">
+            <div class="rating-content">
+            <h2 class="card-heading">7.81/10</h2>
+            <span style="color: rgb(86, 39, 129);">4314 reviews</span>
+            </div>
+            <div class="stars">
+              <input type="radio" name="rating" id="star5">
+              <label for="star5"><i class="fa fa-star"></i></label>
+              <input type="radio" name="rating" id="star4">
+              <label for="star4"><i class="fa fa-star"></i></label>
+              <input type="radio" name="rating" id="star3">
+              <label for="star3"><i class="fa fa-star"></i></label>
+              <input type="radio" name="rating" id="star2">
+              <label for="star2"><i class="fa fa-star"></i></label>
+              <input type="radio" name="rating" id="star1">
+              <label for="star1"><i class="fa fa-star"></i></label>
+            </div>
+            <p class="thought">what do you think about the movie?</p>
+          </div>
+        
+          </div>
+        </div>
         <!-- Movie Cast  -->
         <h2 class="cast-heading">Top Cast</h2>
         <div class="cast">
@@ -334,35 +367,6 @@
 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-<!-- Include the Disqus script at the bottom of the page -->
-<script>
-  // Function to get the current page URL
-function getCurrentPageURL() {
-  var url = window.location.href;
-  return url.replace(/\.html$/, ''); // Remove .html extension from the URL
-}
-
-
-  // Function to generate a unique identifier for the page
-  function generatePageIdentifier() {
-    // You can use any method to generate a unique identifier here.
-    // For example, you can use the current timestamp as the identifier.
-    return 'page-' + Date.now();
-  }
-
-  var disqus_config = function () {
-    this.page.url = getCurrentPageURL(); // Get the current page URL dynamically
-    this.page.identifier = generatePageIdentifier(); // Generate a unique identifier dynamically
-  };
-
-  // Include the Disqus script dynamically (DO NOT include it again)
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://fan2one.disqus.com/embed.js'; // Replace fan2one with your Disqus shortname
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
 
 
     <!-- Copyright  -->
