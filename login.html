@@ -12,6 +12,7 @@
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/login.css">
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </head>
 
@@ -48,26 +49,28 @@
       <input class="signin-button" type="submit" value="Sign In" />
       <div class="or">OR</div>
       <!-- GOOGLE SIGNIN BUTTON -->
+            <div class="remember-flex">
       <div id="g_id_onload"
       data-client_id="60176433158-p6ggkfslnahh8tkccv7330n4bitk152o.apps.googleusercontent.com"
       data-context="signin"
       data-ux_mode="popup"
-      data-login_uri="https://guild04.netlify.app/home"
+      data-login_uri="https://guild04.netlify.app/home.html"
       data-itp_support="true">
  </div>
  
- <div class="g_id_signin"
-      data-type="standard"
-      data-shape="rectangular"
-      data-theme="filled_blue"
-      data-text="continue_with"
-      data-size="large"
-      data-login_uri="https://guild04.netlify.app/home"
-      data-logo_alignment="left"
+<div class="g_id_signin"
+        data-type="standard"
+        data-shape="rectangular"
+        data-theme="outline"
+        data-text="signin_with"
+        data-size="large"
+        data-logo_alignment="left"
       data-width="100%">
  </div>
+ <div data-netlify-identity-menu></div>
 
-      <div class="remember-flex">
+ <div data-netlify-identity-button>Login with Netlify Identity</div>
+
       
       </div>
       <div class="help">
@@ -139,9 +142,6 @@
       });
     };
   </script>
-
-
-
   
   <script src="Netlify/functions/google-signin.js"></script>
   <script src="https://accounts.google.com/gsi/client" async></script>
