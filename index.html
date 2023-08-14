@@ -9,6 +9,7 @@
       href="assets/img/fav-icon.png"
       type="image/x-icon"
     />
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -38,7 +39,9 @@
           <h1>WELCOME TO<br /><span>FilmFLix</span></h1>
           <p>Stream your favourite movies online.</p>
         </div>
-        <a href="#" class="button" onclick="myFunction()">Login</a>
+        <a href="#" class="button " onclick="myFunction()">Login</a>
+        <div data-netlify-identity-menu></div>
+        <div  data-netlify-identity-button></div>
       </div>
       <div class="bottom-text-container1">
         <div class="bottom-text-container">
@@ -300,6 +303,26 @@
       //     const preloaderContainer = document.querySelector(".preloader-container");
       //     preloaderContainer.style.display = "none";
       // });
+      
     </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      // Listen for user authentication events
+      netlifyIdentity.on('init', user => {
+          if (!user) {
+              // User is not authenticated
+              console.log('User is not authenticated');
+          } else {
+              // User is authenticated
+              console.log('User is authenticated');
+          }
+      });
+      
+      // Initialize the Netlify Identity widget
+      netlifyIdentity.init();
+  });
+</script>
+
+  
   </body>
 </html>
