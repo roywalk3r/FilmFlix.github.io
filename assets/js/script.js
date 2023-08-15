@@ -251,6 +251,7 @@ function getCurrentPageURL() {
     const logoutLink = document.getElementById('logoutLink');
   
     // Listen for user authentication events
+    // Listen for user authentication events
     netlifyIdentity.on('init', user => {
       if (!user) {
         // User is not authenticated
@@ -267,6 +268,7 @@ function getCurrentPageURL() {
           if (user_metadata.avatar_url) {
             profilePicture.src = user_metadata.avatar_url;
           } else {
+            // Use Google default avatar (first letter of email)
             // const defaultAvatarLetter = email.charAt(0).toUpperCase();
             profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
           }
@@ -281,24 +283,24 @@ function getCurrentPageURL() {
       }
     });
   
-    // Handle logout link click
-    logoutLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      netlifyIdentity.logout();
-      window.location.href = 'index.html'; // Redirect to index.html after logout
+      // Handle logout link click
+      logoutLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        netlifyIdentity.logout();
+        window.location.href = 'index.html'; // Redirect to index.html after logout
+      });
+    
+      // Listen for successful signup and login events
+      netlifyIdentity.on('login', user => {
+        // Redirect to the homepage
+        window.location.href = '/home.html'; // Replace with your actual homepage URL
+      });
+    
+      netlifyIdentity.on('signup', user => {
+        // Redirect to the homepage
+        window.location.href = '/home.html'; // Replace with your actual homepage URL
+      });
+    
+      // Initialize the Netlify Identity widget
+      netlifyIdentity.init();
     });
-  
-    // Listen for successful signup and login events
-    netlifyIdentity.on('login', user => {
-      // Redirect to the homepage
-      window.location.href = '/home.html'; // Replace with your actual homepage URL
-    });
-  
-    netlifyIdentity.on('signup', user => {
-      // Redirect to the homepage
-      window.location.href = '/home.html'; // Replace with your actual homepage URL
-    });
-  
-    // Initialize the Netlify Identity widget
-    netlifyIdentity.init();
-  });

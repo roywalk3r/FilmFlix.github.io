@@ -7,7 +7,9 @@
   text-transform: capitalize;
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
+  transition:.3s linear;
   color: white;
+
  }
 
  :root {
