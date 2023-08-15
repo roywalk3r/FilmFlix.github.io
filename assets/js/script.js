@@ -242,8 +242,6 @@ function getCurrentPageURL() {
   //   // Initialize the Netlify Identity widget
   //   netlifyIdentity.init();
   // });
-
-
   document.addEventListener('DOMContentLoaded', function () {
     const profilePicture = document.getElementById('profilePicture');
     const userName = document.getElementById('userName');
@@ -260,15 +258,15 @@ function getCurrentPageURL() {
         logoutLink.style.display = 'none';
       } else {
         // User is authenticated
-        const { user_metadata, email, provider } = user;
+        const { user_metadata, username, provider } = user;
   
         // Set profile picture, name, and email based on user type
         if (provider === 'google') {
           if (user_metadata.avatar_url) {
             profilePicture.src = user_metadata.avatar_url;
           } else {
-            // Use Google default avatar (first letter of email)
-            // const defaultAvatarLetter = email.charAt(0).toUpperCase();
+            // Use Google default avatar (first letter of username)
+            // const defaultAvatarLetter = username.charAt(0).toUpperCase();
             profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
           }
           userName.textContent = user_metadata.full_name;
@@ -277,7 +275,7 @@ function getCurrentPageURL() {
           userName.textContent = user_metadata.full_name;
         }
   
-        userEmail.textContent = email;
+        userEmail.textContent = username; // Display the username in the userEmail element
         logoutLink.style.display = 'block';
       }
     });
@@ -286,20 +284,21 @@ function getCurrentPageURL() {
     logoutLink.addEventListener('click', function (e) {
       e.preventDefault();
       netlifyIdentity.logout();
-      window.location.href = '/login.html'; // Redirect to index.html after logout
+      window.location.href = 'index.html'; // Redirect to index.html after logout
     });
   
     // Listen for successful signup and login events
     netlifyIdentity.on('login', user => {
       // Redirect to the homepage
-      window.location.href = '../../home.html'; // Replace with your actual homepage URL
+      window.location.href = '/home.html'; // Replace with your actual homepage URL
     });
   
     netlifyIdentity.on('signup', user => {
       // Redirect to the homepage
-      window.location.href = '../../home.html'; // Replace with your actual homepage URL
+      window.location.href = '/home.html'; // Replace with your actual homepage URL
     });
   
     // Initialize the Netlify Identity widget
     netlifyIdentity.init();
   });
+  
