@@ -23,6 +23,12 @@
     background-color: black;
     background-position: center;
   }
+  #stop-scrolling {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
   @media (max-width:500px) {
     .preloader {
 width: 100%;
@@ -36,7 +42,7 @@ width: 100%;
       }
 
       .logo{
-        width: 100%;
+        width: 500px;
         object-fit: cover;
         margin-top: -6rem;
       }
@@ -51,6 +57,13 @@ body {
   width: 700px;
   height: 100vh;
   text-align: center;
+}
+.netlify-identity-button{
+  color: white;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  
 }
 @media (max-width:500px) {
   body{

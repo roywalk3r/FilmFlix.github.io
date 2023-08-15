@@ -26,10 +26,9 @@
 
     <link rel="stylesheet" href="./assets/css/landingpage.css" />
   </head>
-
   <body id="stop-scrolling">
     <div class="preloader"></div>
-
+  
     <div class="text-container">
       <div class="container-2">
         <a class="navbar-brand" href="home.html"
@@ -39,9 +38,7 @@
           <h1>WELCOME TO<br /><span>FilmFLix</span></h1>
           <p>Stream your favourite movies online.</p>
         </div>
-        <a href="#" class="button " onclick="myFunction()">Login</a>
-        <div data-netlify-identity-menu></div>
-        <div  data-netlify-identity-button></div>
+        <a href="#" class="button " data-netlify-identity-button ></a>
       </div>
       <div class="bottom-text-container1">
         <div class="bottom-text-container">
@@ -51,7 +48,7 @@
         </div>
       </div>
     </div>
-
+  
     <div class="images-container">
       <marquee behavior="alternate" direction="left" scrollamount="8.4">
         // marquee - it defines a scrolling area in the HTML document that moves
@@ -121,7 +118,7 @@
           </div>
         </div>
       </marquee>
-
+  
       <marquee
         behavior="alternate"
         direction="right"
@@ -192,15 +189,15 @@
           <div class="images2">
             <img src="assets/img/Revenger_(2018).jpg" alt="" />
           </div>
-
+  
           <div class="images2">
             <img src="assets/img/the-old-gurd.jpg" alt="" />
           </div>
-
+  
           <div class="images2">
             <img src="assets/img/War_official_poster.jpg" alt="" />
           </div>
-
+  
           <div class="images2">
             <img src="assets/img/zootopia_866a1bf2.webp" alt="" />
           </div>
@@ -209,7 +206,7 @@
           </div>
         </div>
       </marquee>
-
+  
       <marquee
         behavior="alternate"
         direction="left"
@@ -280,13 +277,13 @@
         </div>
       </marquee>
     </div>
-
+  
     <script>
       function myFunction() {
         location.replace("login.html");
       }
     </script>
-
+  
     <script>
       function preloaderFadeOutInit() {
         $(".preloader").fadeOut("slow"); // will first fade out the loading animation
@@ -305,8 +302,7 @@
       // });
       
     </script>
-
-
+  <script src="assets/js/script.js"></script>
   
   </body>
 </html>
