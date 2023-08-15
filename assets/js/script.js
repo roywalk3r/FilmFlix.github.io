@@ -273,7 +273,7 @@ function getCurrentPageURL() {
           }
           userName.textContent = user_metadata.full_name;
         } else {
-          profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`; // Default avatar for non-Google signup
+          profilePicture.src = 'assets/img/user.png'; // Default avatar for non-Google signup
           userName.textContent = user_metadata.full_name;
         }
   
