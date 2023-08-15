@@ -273,7 +273,7 @@ function getCurrentPageURL() {
           }
           userName.textContent = user_metadata.full_name;
         } else {
-          profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`; // Default avatar for non-Google signup
+          profilePicture.src = 'assets/img/profile.png'; // Default avatar for non-Google signup
           userName.textContent = user_metadata.full_name;
         }
   
@@ -286,18 +286,18 @@ function getCurrentPageURL() {
     logoutLink.addEventListener('click', function (e) {
       e.preventDefault();
       netlifyIdentity.logout();
-      window.location.href = 'index.html'; // Redirect to index.html after logout
+      window.location.href = '/login.html'; // Redirect to index.html after logout
     });
   
     // Listen for successful signup and login events
     netlifyIdentity.on('login', user => {
       // Redirect to the homepage
-      window.location.href = '/home.html'; // Replace with your actual homepage URL
+      window.location.href = '../../home.html'; // Replace with your actual homepage URL
     });
   
     netlifyIdentity.on('signup', user => {
       // Redirect to the homepage
-      window.location.href = '/home.html'; // Replace with your actual homepage URL
+      window.location.href = '../../home.html'; // Replace with your actual homepage URL
     });
   
     // Initialize the Netlify Identity widget
