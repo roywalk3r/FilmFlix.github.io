@@ -268,8 +268,8 @@ function getCurrentPageURL() {
             profilePicture.src = user_metadata.avatar_url;
           } else {
             // Use Google default avatar (first letter of email)
-            const defaultAvatarLetter = email.charAt(0).toUpperCase();
-            profilePicture.src = `https://ui-avatars.com/api/?name=${defaultAvatarLetter}&background=random`;
+            // const defaultAvatarLetter = email.charAt(0).toUpperCase();
+            profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
           }
           userName.textContent = user_metadata.full_name;
         } else {
