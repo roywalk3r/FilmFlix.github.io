@@ -233,8 +233,7 @@ function getCurrentPageURL() {
         logoutLink.style.display = 'block';
       }
     });
-     const secondImage = document.getElementById('userImg');
-     secondImage.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=90ee90 `;
+  
     // Handle logout link click
     logoutLink.addEventListener('click', function (e) {
       e.preventDefault();
