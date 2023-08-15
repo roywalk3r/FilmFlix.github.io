@@ -249,7 +249,7 @@ function getCurrentPageURL() {
     const userName = document.getElementById('userName');
     const userEmail = document.getElementById('userEmail');
     const logoutLink = document.getElementById('logoutLink');
-
+  
     // Listen for user authentication events
     netlifyIdentity.on('init', user => {
       if (!user) {
@@ -261,46 +261,45 @@ function getCurrentPageURL() {
       } else {
         // User is authenticated
         const { user_metadata, email, provider } = user;
-
+  
         // Set profile picture, name, and email based on user type
         if (provider === 'google') {
           if (user_metadata.avatar_url) {
             profilePicture.src = user_metadata.avatar_url;
           } else {
             // Use Google default avatar (first letter of email)
-            const defaultAvatarLetter = email.charAt(0).toUpperCase();
-            profilePicture.src = `https://ui-avatars.com/api/?name=${defaultAvatarLetter}&background=random`;
+            // const defaultAvatarLetter = email.charAt(0).toUpperCase();
+            profilePicture.src = `https://ui-avatars.com/api/?name=Ell+Deville&background=random&size=128`;
           }
           userName.textContent = user_metadata.full_name;
         } else {
-          profilePicture.src = '../img/profile.png'; //default avatar for non-google signup
+          profilePicture.src = '../img/profile.png'; // Default avatar for non-Google signup
           userName.textContent = user_metadata.full_name;
         }
-
+  
         userEmail.textContent = email;
         logoutLink.style.display = 'block';
       }
     });
-
+  
     // Handle logout link click
     logoutLink.addEventListener('click', function (e) {
       e.preventDefault();
       netlifyIdentity.logout();
       window.location.href = 'index.html'; // Redirect to index.html after logout
     });
-
+  
     // Listen for successful signup and login events
     netlifyIdentity.on('login', user => {
       // Redirect to the homepage
       window.location.href = '/home.html'; // Replace with your actual homepage URL
     });
-
+  
     netlifyIdentity.on('signup', user => {
       // Redirect to the homepage
       window.location.href = '/home.html'; // Replace with your actual homepage URL
     });
-
+  
     // Initialize the Netlify Identity widget
     netlifyIdentity.init();
   });
-
