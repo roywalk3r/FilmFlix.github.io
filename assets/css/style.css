@@ -325,8 +325,9 @@ header{
 }
 .user-info #userEmail{
   width: 100%;
-  font-style: italic;
+font-family: cursive;
   color:  rgb(123, 59, 184);
+  text-transform: lowercase !important;
 
 }
 .sub-menu hr{

@@ -83,8 +83,7 @@
             src=""
             class="user-img"
             onclick="toggleMenu()"
-            id="userImg"
-          />
+            id="profilePicture" />
         </a>
         <!-- Nav Bar -->
         <div class="navbar">
@@ -113,7 +112,7 @@
         <div class="sub-menu-wrap" id="subMenu">
           <div class="sub-menu">
             <div class="user-info">
-              <img src="" alt="user" id="profilePicture" />
+              <img src="" alt="user"  class="userImg" />
               <h3 id="userName"></h3>
               <p id="userEmail"></p>
               </div>
@@ -1152,7 +1151,11 @@
 
     <!-- Copyright  -->
     <div class="copyright">&#169; Godak All rights Reserved</div>
+<script>
+      const userImg =  document.getElementById('userImg');
+            userImg.src = `https://ui-avatars.com/api/?name=${userName}&background=random`;
 
+</script>
     <!-- Go To Top Button-->
     <button id="scrollToTopButton" title="Go to top" class="ml-5">
       <i class="bx bx-arrow-to-top" style="font-weight: bolder"></i>
