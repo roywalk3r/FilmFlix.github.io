@@ -249,6 +249,7 @@ function getCurrentPageURL() {
     const userName = document.getElementById('userName');
     const userEmail = document.getElementById('userEmail');
     const logoutLink = document.getElementById('logoutLink');
+    const userImg =  document.getElementById('userImg');
   
     // Listen for user authentication events
     netlifyIdentity.on('init', user => {
@@ -270,6 +271,7 @@ function getCurrentPageURL() {
             // Use Google default avatar (first letter of email)
             // const defaultAvatarLetter = email.charAt(0).toUpperCase();
             profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
+            userImg.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
           }
           userName.textContent = user_metadata.full_name;
         } else {

@@ -321,10 +321,12 @@ header{
 }
 .user-info #userName{
   font-size: 100%;
-  color: red;
+  color:  rgb(123, 59, 184);
 }
 .user-info #userEmail{
   width: 100%;
+  font-style: italic;
+  color:  rgb(123, 59, 184);
 
 }
 .sub-menu hr{
@@ -734,7 +736,7 @@ gap: 1.5rem;
 
   font-size:1em!important;
   font-weight: 500;
-  color: rgb(123, 59, 184);
+  color:;
 }
 .content #writer #name{
 margin-left: 4.8rem;
