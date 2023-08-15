@@ -242,8 +242,6 @@ function getCurrentPageURL() {
   //   // Initialize the Netlify Identity widget
   //   netlifyIdentity.init();
   // });
-
-
   document.addEventListener('DOMContentLoaded', function () {
     const profilePicture = document.getElementById('profilePicture');
     const userName = document.getElementById('userName');
@@ -260,24 +258,23 @@ function getCurrentPageURL() {
         logoutLink.style.display = 'none';
       } else {
         // User is authenticated
-        const { user_metadata, email, provider } = user;
+        const { user_metadata, username, provider } = user;
   
         // Set profile picture, name, and email based on user type
         if (provider === 'google') {
           if (user_metadata.avatar_url) {
             profilePicture.src = user_metadata.avatar_url;
           } else {
-            // Use Google default avatar (first letter of email)
-            // const defaultAvatarLetter = email.charAt(0).toUpperCase();
-            profilePicture.src = `https://ui-avatars.com/api/?name=${userName}&background=random`;
+            // Use Google default avatar (username)
+            profilePicture.src = `https://ui-avatars.com/api/?name=${username}&background=random`;
           }
           userName.textContent = user_metadata.full_name;
         } else {
-          profilePicture.src = '../img/profile.png'; // Default avatar for non-Google signup
+          profilePicture.src = 'assets/img/profile.png'; // Default avatar for non-Google signup
           userName.textContent = user_metadata.full_name;
         }
   
-        userEmail.textContent = email;
+        userEmail.textContent = username; // Display the username in the userEmail element
         logoutLink.style.display = 'block';
       }
     });
@@ -303,3 +300,4 @@ function getCurrentPageURL() {
     // Initialize the Netlify Identity widget
     netlifyIdentity.init();
   });
+  
