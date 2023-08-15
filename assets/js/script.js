@@ -268,13 +268,11 @@ function getCurrentPageURL() {
           if (user_metadata.avatar_url) {
             profilePicture.src = user_metadata.avatar_url;
           } else {
-            // Use Google default avatar (first letter of email)
-            // const defaultAvatarLetter = email.charAt(0).toUpperCase();
             profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
           }
           userName.textContent = user_metadata.full_name;
         } else {
-          profilePicture.src = 'assets/img/profile.png'; // Default avatar for non-Google signup
+          profilePicture.src = ''; // Default avatar for non-Google signup
           userName.textContent = user_metadata.full_name;
         }
   
@@ -287,18 +285,18 @@ function getCurrentPageURL() {
       logoutLink.addEventListener('click', function (e) {
         e.preventDefault();
         netlifyIdentity.logout();
-        window.location.href = 'index.html'; // Redirect to index.html after logout
+        window.location.href = '../../index.html'; // Redirect to index.html after logout
       });
     
       // Listen for successful signup and login events
       netlifyIdentity.on('login', user => {
         // Redirect to the homepage
-        window.location.href = '/home.html'; // Replace with your actual homepage URL
+        window.location.href = 'home.html'; // Replace with your actual homepage URL
       });
     
       netlifyIdentity.on('signup', user => {
         // Redirect to the homepage
-        window.location.href = '/home.html'; // Replace with your actual homepage URL
+        window.location.href = 'home.html'; // Replace with your actual homepage URL
       });
     
       // Initialize the Netlify Identity widget
