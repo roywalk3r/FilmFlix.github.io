@@ -235,8 +235,7 @@ function getCurrentPageURL() {
     });
   
     // Handle logout link click
-    logoutLink.addEventListener('click', function (e) {
-      e.preventDefault();
+    logoutLink.addEventListener('click',  (event) => {
     netlifyIdentity.logout();
       window.location.href = 'https://guild04.netlify.app/index'; // Redirect to index.html after logout
     });
