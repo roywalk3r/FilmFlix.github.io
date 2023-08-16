@@ -304,3 +304,4 @@ function getCurrentPageURL() {
       // Initialize the Netlify Identity widget
       netlifyIdentity.init();
     });
+    
