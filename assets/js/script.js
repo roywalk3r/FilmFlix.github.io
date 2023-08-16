@@ -237,3 +237,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize the Netlify Identity widget
   netlifyIdentity.init();
 });
+
+function reDirect() {
+  // Wait for 2 seconds (2000 milliseconds) before redirecting
+  setTimeout(() => {
+    window.location.href = '/home.html'; // Replace with your actual homepage URL
+  }, 10000);
+}
