@@ -169,7 +169,6 @@ function getCurrentPageURL() {
 // });
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
   // DOM elements
   const profilePicture = document.getElementById('profilePicture');
@@ -180,6 +179,18 @@ document.addEventListener('DOMContentLoaded', function () {
   // Check if the user is logged in
   let logged_in = false;
   
+  // Function to set user profile information
+  function setUserProfile(user_metadata, email, provider) {
+    if (user_metadata.avatar_url) {
+      profilePicture.src = user_metadata.avatar_url;
+    } else {
+      profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
+    }
+    userName.textContent = user_metadata.full_name;
+    userEmail.textContent = email;
+    logoutLink.style.display = 'block';
+  }
+
   // Listen for user authentication events
   netlifyIdentity.on('init', user => {
     if (!user) {
@@ -191,23 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       // User is authenticated
       const { user_metadata, email, provider } = user;
-
-      // Set profile picture, name, and email based on user type
-      if (provider === 'google') {
-        if (user_metadata.avatar_url) {
-          profilePicture.src = user_metadata.avatar_url;
-        } else {
-          profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
-        }
-        userName.textContent = user_metadata.full_name;
-      } else {
-        profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
-        // Default avatar for non-Google signup
-        userName.textContent = user_metadata.full_name;
-      }
-
-      userEmail.textContent = email;
-      logoutLink.style.display = 'block';
+      setUserProfile(user_metadata, email, provider);
     }
   });
 
@@ -218,44 +213,16 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.href = 'index.html'; // Redirect to index.html after logout
   });
 
-  // Listen for successful login events
-  netlifyIdentity.on('login', user => {
-    if (user && !logged_in) {
+  // Listen for successful login and signup events
+  function redirectToHomePage() {
+    if (!logged_in) {
       logged_in = true;
       window.location.href = '/home.html'; // Redirect to the homepage
     }
-  });
-
-  // Listen for successful signup events
-  netlifyIdentity.on('signup', user => {
-    if (user && !logged_in) {
-      logged_in = true;
-      window.location.href = '/home.html'; // Redirect to the homepage
-    }
-  });
-
-  // Initialize the Netlify Identity widget
-  netlifyIdentity.init();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const watchMoviesBtn = document.getElementById('watchMoviesBtn');
-
-  // Redirect function
-  function redirectToHome() {
-    window.location.href = 'home.html'; // Replace with your actual homepage URL
   }
 
-  // Listen for user authentication events
-  netlifyIdentity.on('init', user => {
-    if (user) {
-      const welcomeMessage = document.getElementById('welcomeMessage');
-      welcomeMessage.style.display = 'block';
-
-      // Add click event listener to the button
-      watchMoviesBtn.addEventListener('click', redirectToHome);
-    }
-  });
+  netlifyIdentity.on('login', redirectToHomePage);
+  netlifyIdentity.on('signup', redirectToHomePage);
 
   // Initialize the Netlify Identity widget
   netlifyIdentity.init();
