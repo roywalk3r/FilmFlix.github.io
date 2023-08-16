@@ -163,6 +163,7 @@ img {
   box-shadow: 0 5px #660707;
   display: inline-block;
   opacity: 0.9;
+  border: none;
 }
 .button:hover{
   opacity: 1;
