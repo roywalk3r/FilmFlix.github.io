@@ -209,6 +209,8 @@ document.addEventListener('DOMContentLoaded', function () {
       userEmail.textContent = email;
       logoutLink.style.display = 'block';
     }
+    window.location.href = 'home.html'; // Redirect to index.html after logout
+
   });
 
   // Handle logout link click
@@ -216,24 +218,25 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     netlifyIdentity.logout();
     window.location.href = 'index.html'; // Redirect to index.html after logout
-  });
+  // });
 
-  // Listen for successful login events
-  netlifyIdentity.on('login', user => {
-    if (user && !logged_in) {
-      logged_in = true;
-      window.location.href = 'https://quillbot.com/'; // Redirect to the homepage
-    }
-  });
+  // // Listen for successful login events
+  // netlifyIdentity.on('login', user => {
+  //   if (user && !logged_in) {
+  //     logged_in = true;
+  //     window.location.href = 'https://quillbot.com/'; // Redirect to the homepage
+  //   }
+  // });
 
-  // Listen for successful signup events
-  netlifyIdentity.on('signup', user => {
-    if (user && !logged_in) {
-      logged_in = true;
-      window.location.href = 'https://quillbot.com/'; // Redirect to the homepage
-    }
-  });
+  // // Listen for successful signup events
+  // netlifyIdentity.on('signup', user => {
+  //   if (user && !logged_in) {
+  //     logged_in = true;
+  //     window.location.href = 'https://quillbot.com/'; // Redirect to the homepage
+  //   }
+  // });
 
   // Initialize the Netlify Identity widget
   netlifyIdentity.init();
+})
 });
