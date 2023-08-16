@@ -238,17 +238,25 @@ document.addEventListener('DOMContentLoaded', function () {
   netlifyIdentity.init();
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const watchMoviesBtn = document.getElementById('watchMoviesBtn');
 
-let Redirect = document.getElementById('reDirectbtn');
+  // Redirect function
+  function redirectToHome() {
+    window.location.href = 'home.html'; // Replace with your actual homepage URL
+  }
 
-function performDelayedRedirect() {
-  // Wait for 2 seconds (2000 milliseconds) before redirecting
-  setTimeout(() => {
-    window.location.href = '/home.html'; // Replace with your actual homepage URL
-  }, 2000);
-}
+  // Listen for user authentication events
+  netlifyIdentity.on('init', user => {
+    if (user) {
+      const welcomeMessage = document.getElementById('welcomeMessage');
+      welcomeMessage.style.display = 'block';
 
-Redirect.addEventListener('click', function(event) {
-  event.preventDefault(); // Prevent the default link behavior
-  performDelayedRedirect();
-})
+      // Add click event listener to the button
+      watchMoviesBtn.addEventListener('click', redirectToHome);
+    }
+  });
+
+  // Initialize the Netlify Identity widget
+  netlifyIdentity.init();
+});
