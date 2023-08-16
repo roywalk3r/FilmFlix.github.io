@@ -339,7 +339,9 @@ font-family: cursive;
     background: #ccc;
     margin: 15px 0 10px;
 }
-      
+  .callOut{
+    display:none;
+  }    
 /* Submenu Links */
 
 .sub-menu-link{

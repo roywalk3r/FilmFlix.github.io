@@ -108,159 +108,62 @@ function getCurrentPageURL() {
     (d.head || d.body).appendChild(s);
   })();
   //  DISQUS COMMENT SECTION SCRIPT END
-  // document.addEventListener('DOMContentLoaded', function () {
-  //   const profilePicture = document.getElementById('profilePicture');
-  //   const userName = document.getElementById('userName');
-  //   const userEmail = document.getElementById('userEmail');
-  //   // Listen for user authentication events
-  //   netlifyIdentity.on('init', user => {
-  //     if (!user) {
-  //       // User is not authenticated
-  //       profilePicture.src = '';
-  //       userName.textContent = 'Guest';
-  //       userEmail.textContent = '';
-  //     } else {
-  //       // User is authenticated
-  //       const { user_metadata, email, provider } = user;
-  //       // Set profile picture, name, and email based on user type
-  //       if (provider === 'google') {
-  //         profilePicture.src = user_metadata.avatar_url;
-  //         userName.textContent = user_metadata.full_name;
-  //       } else {
-  //         profilePicture.src = ''; // No profile picture for email/password signup
-  //         userName.textContent = user_metadata.full_name;
-  //       }
-  //       userEmail.textContent = email;
-  //     }
-  //   });
-  //   // Handle logout button click
-  //   const logoutLink = document.getElementById('logoutLink');
-  //   logoutLink.addEventListener('click', function () {
-  //     netlifyIdentity.logout();
-  //   });
-  //   // Listen for successful signup and login events
-  //   netlifyIdentity.on('login', user => {
-  //     // Redirect to the homepage
-  //     window.location.href = '/home.html'; // Replace with your actual homepage URL
-  //   });
-  //   netlifyIdentity.on('signup', user => {
-  //     // Redirect to the homepage
-  //     window.location.href = '/home.html'; // Replace with your actual homepage URL
-  //   });
-  //   // Initialize the Netlify Identity widget
-  //   netlifyIdentity.init();
-  // });
-  // document.addEventListener('DOMContentLoaded', function () {
-  //   const profilePicture = document.getElementById('profilePicture');
-  //   const userName = document.getElementById('userName');
-  //   const userEmail = document.getElementById('userEmail');
-  //   const logoutLink = document.getElementById('logoutLink');
-  //   // Listen for user authentication events
-  //   netlifyIdentity.on('init', user => {
-  //     if (!user) {
-  //       // User is not authenticated
-  //       profilePicture.src = '';
-  //       userName.textContent = 'Guest';
-  //       userEmail.textContent = '';
-  //       logoutLink.style.display = 'none';
-  //     } else {
-  //       // User is authenticated
-  //       const { user_metadata, email, provider } = user;
-  //       // Set profile picture, name, and email based on user type
-  //       if (provider === 'google') {
-  //         profilePicture.src = user_metadata.avatar_url;
-  //         userName.textContent = user_metadata.full_name;
-  //       } else {
-  //         profilePicture.src = ''; // No profile picture for email/password signup
-  //         userName.textContent = user_metadata.full_name;
-  //       }
-  //       userEmail.textContent = email;
-  //       logoutLink.style.display = 'block';
-  //     }
-  //   });
-  //   // Handle logout link click
-  //   logoutLink.addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     netlifyIdentity.logout();
-  //     window.location.href = 'index.html'; // Redirect to index.html after logout
-  //   });
-  //   // Listen for successful signup and login events
-  //   netlifyIdentity.on('login', user => {
-  //     // Redirect to the homepage
-  //     window.location.href = '/home.html'; // Replace with your actual homepage URL
-  //   });
-  //   netlifyIdentity.on('signup', user => {
-  //     // Redirect to the homepage
-  //     window.location.href = '/home.html'; // Replace with your actual homepage URL
-  //   });
-  //   // Initialize the Netlify Identity widget
-  //   netlifyIdentity.init();
-  // });
 
+// NELIFY IDENTITY HANDLE
+document.addEventListener('DOMContentLoaded', function () {
+  // DOM elements
+  const profilePicture = document.getElementById('profilePicture');
+  const userName = document.getElementById('userName');
+  const userEmail = document.getElementById('userEmail');
+  const logoutLink = document.getElementById('logoutLink');
 
+  // Listen for user authentication events
+  netlifyIdentity.on('init', user => {
+    if (!user) {
+      // User is not authenticated
+      profilePicture.src = '';
+      userName.textContent = 'Guest';
+      userEmail.textContent = '';
+      logoutLink.style.display = 'none';
+    } else {
+      // User is authenticated
+      const { user_metadata, email, provider } = user;
 
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const profilePicture = document.getElementById('profilePicture');
-    const userName = document.getElementById('userName');
-    const userEmail = document.getElementById('userEmail');
-    const logoutLink = document.getElementById('logoutLink');
-
-    // Listen for user authentication events
-    netlifyIdentity.on('init', user => {
-      if (!user) {
-        // User is not authenticated
-        profilePicture.src = '';
-        userName.textContent = 'Guest';
-        userEmail.textContent = '';
-        logoutLink.style.display = 'none';
-      } else {
-        // User is authenticated
-        const { user_metadata, email, provider } = user;
-  
-        // Set profile picture, name, and email based on user type
-        if (provider === 'google') {
-          if (user_metadata.avatar_url) {
-            profilePicture.src = user_metadata.avatar_url;
-          } else {
-
-            profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
-         
-          }
-          userName.textContent = user_metadata.full_name;
+      // Set profile picture, name, and email based on user type
+      if (provider === 'google') {
+        if (user_metadata.avatar_url) {
+          profilePicture.src = user_metadata.avatar_url;
         } else {
-          profilePicture.src =`https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`; // Default avatar for non-Google signup
-          userName.textContent = user_metadata.full_name;
+          profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
         }
-  
-        userEmail.textContent = email;
-        logoutLink.style.display = 'block';
+        userName.textContent = user_metadata.full_name;
+      } else {
+        profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
+        // Default avatar for non-Google signup
+        userName.textContent = user_metadata.full_name;
       }
-    });
-  
-      // Handle logout link click
-      logoutLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        netlifyIdentity.logout();
-        window.location.href = 'index.html'; // Redirect to index.html after logout
-      });
- // Listen for successful signup and login events
-netlifyIdentity.on('login', () => {
-  // Redirect to the homepage
-  window.location.href = '/home.html'; // Replace with your actual homepage URL
-});
 
-netlifyIdentity.on('signup', () => {
-  // Redirect to the homepage
-  window.location.href = '/home.html'; // Replace with your actual homepage URL
-});
-
-// Initialize the Netlify Identity widget
-netlifyIdentity.init();
+      userEmail.textContent = email;
+      logoutLink.style.display = 'block';
+    }
   });
-    
-let btnClose = document.querySelector(".btnClose");
-btnClose.addEventListener('click', function (e) {
-  e.preventDefault();
-  window.location.href = 'home.html'; // Redirect to index.html after logout
+
+  // Handle logout link click
+  logoutLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    netlifyIdentity.logout();
+    window.location.href = 'index.html'; // Redirect to index.html after logout
+  });
+
+  // Redirect to the homepage after successful login or signup
+  netlifyIdentity.on('login', () => {
+    window.location.href = '/home.html'; // Replace with your actual homepage URL
+  });
+
+  netlifyIdentity.on('signup', () => {
+    window.location.href = '/home.html'; // Replace with your actual homepage URL
+  });
+
+  // Initialize the Netlify Identity widget
+  netlifyIdentity.init();
 });
