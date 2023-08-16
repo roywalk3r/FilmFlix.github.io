@@ -109,14 +109,77 @@ function getCurrentPageURL() {
   })();
   //  DISQUS COMMENT SECTION SCRIPT END
 
-// NELIFY IDENTITY HANDLE
+// // NELIFY IDENTITY HANDLE
+// document.addEventListener('DOMContentLoaded', function () {
+//   // DOM elements
+//   const profilePicture = document.getElementById('profilePicture');
+//   const userName = document.getElementById('userName');
+//   const userEmail = document.getElementById('userEmail');
+//   const logoutLink = document.getElementById('logoutLink');
+
+//   // Listen for user authentication events
+//   netlifyIdentity.on('init', user => {
+//     if (!user) {
+//       // User is not authenticated
+//       profilePicture.src = '';
+//       userName.textContent = 'Guest';
+//       userEmail.textContent = '';
+//       logoutLink.style.display = 'none';
+//     } else {
+//       // User is authenticated
+//       const { user_metadata, email, provider } = user;
+
+//       // Set profile picture, name, and email based on user type
+//       if (provider === 'google') {
+//         if (user_metadata.avatar_url) {
+//           profilePicture.src = user_metadata.avatar_url;
+//         } else {
+//           profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
+//         }
+//         userName.textContent = user_metadata.full_name;
+//       } else {
+//         profilePicture.src = `https://ui-avatars.com/api/?name=${user_metadata.full_name}&background=random`;
+//         // Default avatar for non-Google signup
+//         userName.textContent = user_metadata.full_name;
+//       }
+
+//       userEmail.textContent = email;
+//       logoutLink.style.display = 'block';
+//     }
+//   });
+
+//   // Handle logout link click
+//   logoutLink.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     netlifyIdentity.logout();
+//     window.location.href = 'index.html'; // Redirect to index.html after logout
+//   });
+
+//   // Redirect to the homepage after successful login or signup
+//   netlifyIdentity.on('login', () => {
+//     window.location.href = 'home.html'; // Replace with your actual homepage URL
+//   });
+
+//   netlifyIdentity.on('signup', () => {
+//     window.location.href = 'home.html'; // Replace with your actual homepage URL
+//   });
+
+//   // Initialize the Netlify Identity widget
+//   netlifyIdentity.init();
+// });
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   // DOM elements
   const profilePicture = document.getElementById('profilePicture');
   const userName = document.getElementById('userName');
   const userEmail = document.getElementById('userEmail');
   const logoutLink = document.getElementById('logoutLink');
-
+  
+  // Check if the user is logged in
+  let logged_in = false;
+  
   // Listen for user authentication events
   netlifyIdentity.on('init', user => {
     if (!user) {
@@ -155,13 +218,20 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.href = 'index.html'; // Redirect to index.html after logout
   });
 
-  // Redirect to the homepage after successful login or signup
-  netlifyIdentity.on('login', () => {
-    window.location.href = 'home.html'; // Replace with your actual homepage URL
+  // Listen for successful login events
+  netlifyIdentity.on('login', user => {
+    if (user && !logged_in) {
+      logged_in = true;
+      window.location.href = '/home.html'; // Redirect to the homepage
+    }
   });
 
-  netlifyIdentity.on('signup', () => {
-    window.location.href = 'home.html'; // Replace with your actual homepage URL
+  // Listen for successful signup events
+  netlifyIdentity.on('signup', user => {
+    if (user && !logged_in) {
+      logged_in = true;
+      window.location.href = '/home.html'; // Redirect to the homepage
+    }
   });
 
   // Initialize the Netlify Identity widget
