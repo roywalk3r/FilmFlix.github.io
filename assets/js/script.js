@@ -238,9 +238,17 @@ document.addEventListener('DOMContentLoaded', function () {
   netlifyIdentity.init();
 });
 
-function reDirect() {
+
+let Redirect = document.getElementById('reDirectbtn');
+
+function performDelayedRedirect() {
   // Wait for 2 seconds (2000 milliseconds) before redirecting
   setTimeout(() => {
     window.location.href = '/home.html'; // Replace with your actual homepage URL
-  }, 10000);
+  }, 2000);
 }
+
+Redirect.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the default link behavior
+  performDelayedRedirect();
+})
