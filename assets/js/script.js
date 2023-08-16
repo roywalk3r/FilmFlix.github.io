@@ -157,11 +157,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Redirect to the homepage after successful login or signup
   netlifyIdentity.on('login', () => {
-    window.location.href = '/home.html'; // Replace with your actual homepage URL
+    window.location.href = 'home.html'; // Replace with your actual homepage URL
   });
 
   netlifyIdentity.on('signup', () => {
-    window.location.href = '/home.html'; // Replace with your actual homepage URL
+    window.location.href = 'home.html'; // Replace with your actual homepage URL
   });
 
   // Initialize the Netlify Identity widget
