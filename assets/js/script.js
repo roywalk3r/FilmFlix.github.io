@@ -240,18 +240,24 @@ function getCurrentPageURL() {
         netlifyIdentity.logout();
         window.location.href = 'index.html'; // Redirect to index.html after logout
       });
-    
-      // Listen for successful signup and login events
-      netlifyIdentity.on('login', user => {
-        // Redirect to the homepage
-        window.location.href = '/home.html'; // Replace with your actual homepage URL
-      });
-    
-      netlifyIdentity.on('signup', user => {
-        // Redirect to the homepage
-        window.location.href = '/home.html'; // Replace with your actual homepage URL
-      });
-    
+      
+    // Listen for successful signup and login events
+netlifyIdentity.on('login', user => {
+  // Prevent default behavior
+  event.preventDefault();
+
+  // Redirect to the homepage
+  window.location.href = 'home.html'; // Replace with your actual homepage URL
+});
+
+netlifyIdentity.on('signup', user => {
+  // Prevent default behavior
+  event.preventDefault();
+
+  // Redirect to the homepage
+  window.location.href = 'home.html'; // Replace with your actual homepage URL
+});
+
       // Initialize the Netlify Identity widget
       netlifyIdentity.init();
     });
