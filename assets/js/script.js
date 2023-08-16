@@ -237,18 +237,18 @@ function getCurrentPageURL() {
     // Handle logout link click
     logoutLink.addEventListener('click',  (event) => {
     netlifyIdentity.logout();
-      window.location.href = 'https://guild04.netlify.app/index'; // Redirect to index.html after logout
+      window.location.href = '/index.html'; // Redirect to index.html after logout
     });
   
     // Listen for successful signup and login events
     netlifyIdentity.on('login', user => {
       // Redirect to the homepage
-      window.location.href = 'https://guild04.netlify.app/home'; // Replace with your actual homepage URL
+      window.location.href = '/home.html'; // Replace with your actual homepage URL
     });
   
     netlifyIdentity.on('signup', user => {
       // Redirect to the homepage
-      window.location.href = 'https://guild04.netlify.app/home'; // Replace with your actual homepage URL
+      window.location.href = '/home.html'; // Replace with your actual homepage URL
     });
   
     // Initialize the Netlify Identity widget
