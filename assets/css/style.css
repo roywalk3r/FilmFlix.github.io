@@ -352,6 +352,14 @@ font-family: cursive;
 .sub-menu-link p{
     width: 100%;
 }
+.logout{
+  display: flex;
+  width: 100%;
+  justify-content: space-between ;
+  flex-direction: row;
+  flex-basis: 2;
+}
+
 
 .sub-menu-link img{
     width: 40px;
